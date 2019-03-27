@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WhatsThisApp</string>
+    <string name="title_activity_ask_view1">AskView1</string>
+    <string name="title_ask">Ask</string>
+    <string name="title_answer">Answer</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_activity_answer_view1">AnswerView1</string>
+    <string name="title_activity_explore_view1">ExploreView1</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
