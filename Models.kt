@@ -12,7 +12,7 @@ data class BrowseList(var post: List<BrowseItem>)
 
 data class Classroom(var id: Int, var name: String, var admins: Array<User>, var users: Array<User>)
 
-data class Ask(var bI: BrowseItem, var answers: List<Answer> )
+data class Ask(var bI: BrowseItem, var answers: Array<Answer>)
 
 data class Answer(var answer: String, var poster: Poster, var postId: Int, var points: Int, var accepted: Boolean, var replies: Replies)
 

@@ -1,22 +1,23 @@
 import android.util.Log
-
+import java.util.*
+import java.util.Collections.EMPTY_SET
 interface ClientInterface {
 
     fun httpGetStatus(): Boolean
 
-    fun httpGetAllAsks(): Array<String>
+    fun httpGetAllAsks(id: Int): Ask
 
-    fun httpGetAllUserAsks(): Array<String>
+    fun httpGetAllUserAsks(userId: Int): Array<Ask>
 
-    fun httpGetAllUserAnswers(): Array<String>
+    fun httpGetAllUserAnswers(userId: Int): Array<Answer>
 
-    fun httpGetUserData(): String
+    fun httpGetUserData(id: Int): User
 
-    fun httpGetAskByID(): String
+    fun httpGetAskByID(id: Int): Ask
 
-    fun httpGetClassroomByID(): String
+    fun httpGetClassroomByID(id: Int): Classroom
 
-    fun httpGetUserNotifications(): Array<String>
+    fun httpGetUserNotifications(userId: Int): Array<Notification>
 
     fun httpPostCreateUser()
 
@@ -40,50 +41,78 @@ interface ClientInterface {
 
 class MockClient : ClientInterface {
 
-    private val asks: Array<String> = arrayOf( "https://interactives.dallasnews.com/2018/the-disappearing-horny-toad/images/_lizards-poster.jpg", "")
+    //browse items and list
+    private val browseItem1 = BrowseItem(8858, "https://interactives.dallasnews.com/2018/the-disappearing-horny-toad/images/_lizards-poster.jpg", "description1")
+    private val browseItem2 = BrowseItem(8989, "https://www.wonderplugin.com/videos/demo-image0.jpg", "description2")
 
-    private val answers: Array<String> = arrayOf("horney toad", "horned lizard")
+    //posters
+    private val poster1 = Poster("poster 1", 4567)
+    private val poster2 = Poster("poster 2", 4938)
 
-    private val notifications: Array<String> = arrayOf("notification1", "notification2", "notification3")
+    //for the reply
+    private val set = TreeSet<Replies>()
+
+    //replies
+    private val reply1 = Replies(7895, poster1,"reply", set) //not sure exactly what we want to use here
+    private val reply2 = Replies(7895, poster1,"reply", set) //not sure exactly what we want to use here
+
+    //answers, individual and list of them
+    private val answer1 =  Answer("answer 1", poster1, 1234, 10, false, reply1)
+    private val answer2 =  Answer("answer 2", poster2, 2222, 13, false, reply2)
+    private val listAnswers1: Array<Answer> = arrayOf(answer1)
+    private val listAnswers2: Array<Answer> = arrayOf(answer1, answer2)
 
 
-    override fun httpGetStatus(): Boolean{
+    //asks, individual and list
+    private val ask1  = Ask(browseItem1, listAnswers1)
+    private val ask2  = Ask(browseItem2, listAnswers2)
+    private val allAsk: Array<Ask> = arrayOf(ask1, ask2)
+
+    //user
+    private val user1 = User("name", 4567, false, 22, 10)
+    private val admin = User("adminuser", 9999, true, 0, 0)
+    private val userList: Array<User> = arrayOf(user1)
+    private val adminList: Array<User> = arrayOf(admin)
+
+    private val date = Date()
+    //notifications
+    private val notification1 = Notification(3333, NotificationEnum.STUFF, false, "notification", date, 4567)
+    private val notification2 = Notification(3334, NotificationEnum.STUFF, true, "notification2", date, 4567)
+    private val listNotifications: Array<Notification> = arrayOf(notification1, notification2)
+
+    //classroom
+    private val classroom = Classroom(5555, "class", adminList, userList)
+
+    override fun httpGetStatus(): Boolean {
         return true
     }
 
-    override  fun httpGetAllAsks(): Array<String>{
-        return asks
-
+    override  fun httpGetAllAsks(id: Int): Ask {
+        return ask1
     }
 
-    override fun httpGetAllUserAsks(): Array<String>{
-        return asks
-
+    override fun httpGetAllUserAsks(userId: Int): Array<Ask>{
+        return allAsk
     }
 
-    override fun httpGetAllUserAnswers(): Array<String>{
-        return answers
-
+    override fun httpGetAllUserAnswers(userId: Int): Array<Answer>{
+        return listAnswers2
     }
 
-    override fun httpGetUserData(): String{
-        return "my name????"
-
+    override fun httpGetUserData(id: Int): User{
+        return user1
     }
 
-    override fun httpGetAskByID(): String{
-        var ask = "https://interactives.dallasnews.com/2018/the-disappearing-horny-toad/images/_lizards-poster.jpg"
-        return ask
+    override fun httpGetAskByID(id: Int): Ask{
+        return ask1
     }
 
-    override fun httpGetClassroomByID(): String{
-        return "my classroom"
-
+    override fun httpGetClassroomByID(id: Int): Classroom  {
+        return classroom
     }
 
-    override fun httpGetUserNotifications(): Array<String>{
-        return notifications
-
+    override fun httpGetUserNotifications(userId: Int): Array<Notification>{
+        return listNotifications
     }
 
     override fun httpPostCreateUser(){
