@@ -6,7 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#7FE6AF"
+        android:background="#DAF5CC"
         tools:context=".ExploreView1">
 
     <TextView

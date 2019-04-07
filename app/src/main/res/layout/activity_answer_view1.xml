@@ -6,6 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#DAF5CC"
         tools:context=".AnswerView1">
 
     <LinearLayout
@@ -62,19 +63,8 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/border">
             <TextView
-                    android:text="Description"
-                    android:textSize="6pt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" android:id="@+id/post_description_title"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="2"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    android:scaleType="fitCenter"
-            />
-            <TextView
                     android:text="uis nostrud exercitation ullamco laboris nisi utt"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/postDescription"
                     android:layout_gravity="center_vertical"
@@ -86,25 +76,53 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="253dp"
-                android:paddingTop="30dp">
+                android:layout_height="95dp"
+                android:paddingTop="5dp">
             <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="80dp" app:srcCompat="@drawable/answerbutt"
+                    android:layout_height="80dp" app:srcCompat="@drawable/thumbsbutton"
                     android:background="@drawable/mybutton"
-                    android:id="@+id/imageButton" android:layout_weight="1"
+                    android:id="@+id/dunnoButton" android:layout_weight="1"
                     android:gravity="center"
                     android:padding="5dp"
                     android:scaleType="fitCenter"/>
             <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="80dp" app:srcCompat="@drawable/thumbsbutton"
-                    android:id="@+id/imageButton2" android:layout_weight="1"
+                    android:layout_height="80dp" app:srcCompat="@drawable/answerbutt"
+                    android:id="@+id/answerButton" android:layout_weight="1"
                     android:background="@drawable/mybutton"
                     android:gravity="center"
                     android:padding="5dp"
                     android:scaleType="fitCenter"/>
         </LinearLayout>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="5dp">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                        android:text="Answers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:id="@+id/answersTitle"
+                        android:layout_marginBottom="10dp"/>
+                <TextView
+                        android:text="No Answers Yet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:id="@+id/answerView"
+                        android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
