@@ -78,17 +78,14 @@ class AskView1 : AppCompatActivity() {
                         }
                     val dialog = builder.create()
                     dialog.show()
-
                 }
                 else{
                     requestPermission()
-
                 }
             }
             else{
                 launchCamera()
             }
-
         }
     }
 
@@ -104,7 +101,6 @@ class AskView1 : AppCompatActivity() {
 
     private fun requestPermission(){
         ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CAMERA), 765)
-
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -117,8 +113,6 @@ class AskView1 : AppCompatActivity() {
                 }
             }
         }
-
-
     }
 
     private fun launchCamera(){
@@ -131,7 +125,6 @@ class AskView1 : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if( requestCode == 9090){
-
             if( data != null ) {
                 val imageData1: Bitmap = data.extras.get("data") as Bitmap
                 val stream = ByteArrayOutputStream()

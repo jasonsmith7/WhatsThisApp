@@ -31,7 +31,7 @@
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:id="@+id/camera_button"
-            android:background="@drawable/mybutton"
+            android:background="@drawable/my_button"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="162dp" android:layout_marginStart="162dp"

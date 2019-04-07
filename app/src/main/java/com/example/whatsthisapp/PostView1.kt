@@ -33,13 +33,13 @@ class PostView1 : AppCompatActivity() {
             }
             R.id.navigation_answer -> {
 
-                return@OnNavigationItemSelectedListener true
+                //return@OnNavigationItemSelectedListener true
             }
-//            R.id.navigation_explore -> {
-//                val intent = Intent(this, ExploreView1::class.java)
-//                this.startActivity(intent)
-//               // return@OnNavigationItemSelectedListener true
-//            }
+            R.id.navigation_explore -> {
+                val intent = Intent(this, ExploreView1::class.java)
+                this.startActivity(intent)
+               // return@OnNavigationItemSelectedListener true
+            }
         }
         false
     }
@@ -54,10 +54,8 @@ class PostView1 : AppCompatActivity() {
         val post1: Post? = intent.extras.get("newAsk") as? Post
         val imageView = findViewById<ImageView>(R.id.postImage)
         postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
+        imageView.rotation = 90.toFloat()
         val descr: TextView = findViewById(R.id.postDescription)
         descr.text = post1?.description.toString()
-
     }
-
-
 }
