@@ -156,12 +156,13 @@ class AskView1 : AppCompatActivity() {
                 //get description
                 val desc: EditText = findViewById(R.id.editText)
                 var post = Post()
-                post.img=imageData
-                post.description=desc.text.toString()
+
 
                 acceptButton.setOnClickListener{
+                    post.img=imageData
+                    post.description=desc.text.toString()
                     val intent = Intent(this, PostView1::class.java)
-                    intent.putExtra("post", post as Serializable)
+                    intent.putExtra("newAsk", post as Serializable)
                     this.startActivity(intent)
                     finish()
                 }

@@ -46,21 +46,16 @@ class PostView1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_answer_view1)
+        setContentView(R.layout.activity_post_view1)
         title = "Your Post"
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.isSelected
             //val intent: Intent = getIntent()
-        val post1: Post? = intent.extras.get("post") as? Post
-//        val im: ImageView = findViewById(R.id.imageView9)
-//        im.visibility = View.INVISIBLE
-
-
-
+        val post1: Post? = intent.extras.get("newAsk") as? Post
         val imageView = findViewById<ImageView>(R.id.postImage)
         postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
         val descr: TextView = findViewById(R.id.postDescription)
-        descr.text = post1?.description
+        descr.text = post1?.description.toString()
 
     }
 

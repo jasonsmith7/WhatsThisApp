@@ -6,8 +6,10 @@ import java.util.*
 class MockClient : ClientInterface {
 
     //browse items and list
-    private val browseItem1 = BrowseItem(8858, "https://interactives.dallasnews.com/2018/the-disappearing-horny-toad/images/_lizards-poster.jpg", "description1")
-    private val browseItem2 = BrowseItem(8989, "https://www.wonderplugin.com/videos/demo-image0.jpg", "description2")
+    private val browseItem1 = BrowseItem(8858, "https://interactives.dallasnews.com/2018/the-disappearing-horny-toad/images/_lizards-poster.jpg", "What the heck is this type of dog?", 4, 6)
+    private val browseItem2 = BrowseItem(8989, "https://www.wonderplugin.com/videos/demo-image0.jpg", "This bird is beautiful!!! What is it and why is it swimming???", 1, 9)
+    private val browseItem3 = BrowseItem(8990, "https://amp.businessinsider.com/images/5bacdeec254699e6078b4568-750-445.jpg", "This is a cool rock I found on the field trip. It glows!!", 8, 5)
+    private val browseItem4 = BrowseItem(8991, "https://i.pinimg.com/originals/5e/24/9c/5e249ce44709a5675ed9b98998ea8ec7.jpg", "I saw this yesterday in Yosemite Nation Park. What kind of bug is this??", 13, 26)
 
     //posters
     private val poster1 = Poster("poster 1", 4567)
@@ -19,10 +21,14 @@ class MockClient : ClientInterface {
     //replies
     private val reply1 = Replies(7895, poster1,"reply", set) //not sure exactly what we want to use here
     private val reply2 = Replies(7895, poster1,"reply", set) //not sure exactly what we want to use here
+    private val reply3 = Replies(7892, poster2,"reply", set) //not sure exactly what we want to use here
+    private val reply4 = Replies(7893, poster2,"reply", set) //not sure exactly what we want to use here
 
     //answers, individual and list of them
     private val answer1 =  Answer("answer 1", poster1, 1234, 10, false, reply1)
     private val answer2 =  Answer("answer 2", poster2, 2222, 13, false, reply2)
+    private val answer3 =  Answer("answer 3", poster1, 1235, 5, false, reply3)
+    private val answer4 =  Answer("answer 4", poster2, 2226, 6, false, reply4)
     private val listAnswers1: Array<Answer> = arrayOf(answer1)
     private val listAnswers2: Array<Answer> = arrayOf(answer1, answer2)
 
@@ -30,7 +36,9 @@ class MockClient : ClientInterface {
     //asks, individual and list
     private val ask1  = Ask(browseItem1, listAnswers1)
     private val ask2  = Ask(browseItem2, listAnswers2)
-    private val allAsk: Array<Ask> = arrayOf(ask1, ask2)
+    private val ask3  = Ask(browseItem3, listAnswers1)
+    private val ask4  = Ask(browseItem4, listAnswers2)
+    private val allAsk: Array<Ask> = arrayOf(ask1, ask2, ask3, ask4)
 
     //user
     private val user1 = User("name", 4567, false, 22, 10)

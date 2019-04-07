@@ -15,9 +15,11 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import java.io.Serializable
 
 
 class ExploreView1 : AppCompatActivity() {
@@ -48,26 +50,64 @@ class ExploreView1 : AppCompatActivity() {
 
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()
-
-        //var pV1: ImageView = findViewById(R.id.postImage1)
-        DownloadImageTask( findViewById(R.id.postImage1)).execute(posts[0].bI?.imgLink)
         var des1: TextView = findViewById(R.id.textView)
         var des2: TextView = findViewById(R.id.textView2)
-        des1.text = posts[0].bI?.description
+        var des3: TextView = findViewById(R.id.textView3)
+        var des4: TextView = findViewById(R.id.textView4)
+
+        //convert url string to bitmap
+        DownloadImageTask( findViewById(R.id.postImage1)).execute(posts[0].bI?.imgLink)
         DownloadImageTask( findViewById(R.id.postImage2)).execute(posts[1].bI?.imgLink)
+        DownloadImageTask( findViewById(R.id.postImage3)).execute(posts[2].bI?.imgLink)
+        DownloadImageTask( findViewById(R.id.postImage4)).execute(posts[3].bI?.imgLink)
+        des1.text = posts[0].bI?.description
         des2.text = posts[1].bI?.description
-        // var img1: String? = posts[0].bI?.imgLink.toString()
-       // var img2: Uri = Uri.parse(img1)
-//        val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, posts[0].bI?.imgLink)
-//        pV1.setImageBitmap(bitmap)
-//        var pV2: ImageView = findViewById(R.id.postImage2)
-//        val bitmap2 = MediaStore.Images.Media.getBitmap(this.contentResolver, posts[2].bI?.imgLink)
-//        pV2.setImageBitmap(bitmap2)
+        des3.text = posts[2].bI?.description
+        des4.text = posts[3].bI?.description
+
 
         var butt1: ImageButton = findViewById(R.id.postImage1)
         var butt2: ImageButton = findViewById(R.id.postImage2)
+        var butt3: ImageButton = findViewById(R.id.postImage3)
+        var butt4: ImageButton = findViewById(R.id.postImage4)
 
-
+        //clicklisteners for buttons
+        butt1.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[0].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[0].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        butt2.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[1].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[1].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        butt3.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[2].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[2].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        butt4.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[3].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[3].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
 
 
 
