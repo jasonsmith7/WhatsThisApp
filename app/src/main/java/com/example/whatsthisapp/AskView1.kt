@@ -18,7 +18,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_ask_view1.*
 import android.graphics.Matrix;
-import com.example.whatsthisapp.ask
+//import com.example.whatsthisapp.ask
 import android.R.attr.pivotY
 import android.R.attr.pivotX
 import android.R.attr.angle
@@ -45,11 +45,11 @@ class AskView1 : AppCompatActivity() {
                 this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
-//            R.id.navigation_explore -> {
-//                val intent = Intent(this, ExploreView1::class.java)
-//                this.startActivity(intent)
-//               // return@OnNavigationItemSelectedListener true
-//            }
+            R.id.navigation_explore -> {
+                val intent = Intent(this, ExploreView1::class.java)
+                this.startActivity(intent)
+               // return@OnNavigationItemSelectedListener true
+            }
         }
         false
     }

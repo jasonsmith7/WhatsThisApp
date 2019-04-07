@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     val askButton = findViewById<ImageButton>(R.id.askButton)
     val answerButton: ImageButton = findViewById(R.id.answerButton)
-    //val exploreButton: ImageButton = findViewById(R.id.exploreButton)
+    val exploreButton: ImageButton = findViewById(R.id.exploreButton)
 
     askButton.setOnClickListener{
         val intent = Intent(this, AskView1::class.java)
@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AnswerView1::class.java)
         this.startActivity(intent)
     }
-//    exploreButton.setOnClickListener{
-//        val intent = Intent(this, ExploreView1::class.java)
-//        this.startActivity(intent)
-//    }
+    exploreButton.setOnClickListener{
+        val intent = Intent(this, ExploreView1::class.java)
+        this.startActivity(intent)
+    }
 
     }
     private fun openFragment(fragment: Fragment) {

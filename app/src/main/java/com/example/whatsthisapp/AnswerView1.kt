@@ -35,11 +35,11 @@ class AnswerView1 : AppCompatActivity() {
 
                 return@OnNavigationItemSelectedListener true
             }
-//            R.id.navigation_explore -> {
-//                val intent = Intent(this, ExploreView1::class.java)
-//                this.startActivity(intent)
-//               // return@OnNavigationItemSelectedListener true
-//            }
+            R.id.navigation_explore -> {
+                val intent = Intent(this, ExploreView1::class.java)
+                this.startActivity(intent)
+               // return@OnNavigationItemSelectedListener true
+            }
         }
         false
     }

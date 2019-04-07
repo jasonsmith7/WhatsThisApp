@@ -1,43 +1,7 @@
+package com.example.whatsthisapp
+
 import android.util.Log
 import java.util.*
-import java.util.Collections.EMPTY_SET
-interface ClientInterface {
-
-    fun httpGetStatus(): Boolean
-
-    fun httpGetAllAsks(id: Int): Ask
-
-    fun httpGetAllUserAsks(userId: Int): Array<Ask>
-
-    fun httpGetAllUserAnswers(userId: Int): Array<Answer>
-
-    fun httpGetUserData(id: Int): User
-
-    fun httpGetAskByID(id: Int): Ask
-
-    fun httpGetClassroomByID(id: Int): Classroom
-
-    fun httpGetUserNotifications(userId: Int): Array<Notification>
-
-    fun httpPostCreateUser()
-
-    fun httpPostCreateAsks()
-
-    fun httpPostAnswer()
-
-    fun httpPostReply()
-
-    fun httpPostNewClassroom()
-
-    fun httpPostVote()
-
-    fun httpPutUpdateAdminClassroom()
-
-    fun httpPutUpdateUserClassroom()
-
-    fun httpPutSetNotificationRead()
-
-}
 
 class MockClient : ClientInterface {
 
@@ -87,11 +51,15 @@ class MockClient : ClientInterface {
         return true
     }
 
+//    override  fun httpGetAllAsks(): Array<Ask> {
+//        return allAsks
+//    }
+
     override  fun httpGetAllAsks(id: Int): Ask {
         return ask1
     }
 
-    override fun httpGetAllUserAsks(userId: Int): Array<Ask>{
+    override fun httpGetAllUserAsks(): Array<Ask>{
         return allAsk
     }
 
@@ -155,4 +123,6 @@ class MockClient : ClientInterface {
         Log.i("","called Put for changing read variable" )
 
     }
+
 }
+
