@@ -20,6 +20,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".PostView1"
+                android:label="@string/title_activity_post_view1">
+        </activity>
+        <activity
                 android:name=".ExploreView1"
                 android:label="@string/title_activity_explore_view1">
         </activity>

@@ -12,13 +12,26 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_ask_view1.*
+import android.graphics.Matrix;
 import com.example.whatsthisapp.ask
+import android.R.attr.pivotY
+import android.R.attr.pivotX
+import android.R.attr.angle
+import android.graphics.BitmapFactory
+import android.media.Image
+import android.widget.EditText
+import java.io.Serializable
+import android.R.attr.bitmap
+import java.io.ByteArrayOutputStream
 
 
 class AskView1 : AppCompatActivity() {
+
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -32,11 +45,11 @@ class AskView1 : AppCompatActivity() {
                 this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_explore -> {
-                val intent = Intent(this, ExploreView1::class.java)
-                this.startActivity(intent)
-               // return@OnNavigationItemSelectedListener true
-            }
+//            R.id.navigation_explore -> {
+//                val intent = Intent(this, ExploreView1::class.java)
+//                this.startActivity(intent)
+//               // return@OnNavigationItemSelectedListener true
+//            }
         }
         false
     }
@@ -47,7 +60,8 @@ class AskView1 : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         val cameraButton: Button = findViewById(R.id.camera_button)
-
+        val im: ImageView = findViewById(R.id.imageView4)
+        im.visibility = View.INVISIBLE
 
         cameraButton.setOnClickListener {
 
@@ -59,7 +73,7 @@ class AskView1 : AppCompatActivity() {
 
                     builder.setMessage("I need to see you to work properly!!")
                         .setTitle("Permission required")
-                        .setPositiveButton("OK") { dialog, id ->
+                        .setPositiveButton("OK") { _, _ ->
                             requestPermission()
                         }
                     val dialog = builder.create()
@@ -119,10 +133,40 @@ class AskView1 : AppCompatActivity() {
         if( requestCode == 9090){
 
             if( data != null ) {
-                val imageData: Bitmap = data.extras.get("data") as Bitmap
-
+                val imageData1: Bitmap = data.extras.get("data") as Bitmap
+                val stream = ByteArrayOutputStream()
+                imageData1.compress(Bitmap.CompressFormat.PNG, 90, stream)
+                var imageData: ByteArray = stream.toByteArray()
                 val imageView = findViewById<ImageView>(R.id.image_view)
-                imageView.setImageBitmap(imageData)
+                imageView.setImageBitmap(imageData1)
+                imageView.rotation = 90.toFloat()
+//                val matrix = Matrix()
+//                imageView.scaleType = ImageView.ScaleType.MATRIX   //required
+//                matrix.postRotate(angle.toFloat(), pivotX.toFloat(), pivotY.toFloat())
+//                imageView.imageMatrix = matrix
+
+                val cameraButton = findViewById<Button>(R.id.camera_button)
+                cameraButton.visibility = View.GONE
+                val acceptButton = findViewById<ImageButton>(R.id.acceptButton)
+                val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
+                acceptButton.visibility = View.VISIBLE
+                cancelButton.visibility = View.VISIBLE
+
+
+                //get description
+                val desc: EditText = findViewById(R.id.editText)
+                var post = Post()
+                post.img=imageData
+                post.description=desc.text.toString()
+
+                acceptButton.setOnClickListener{
+                    val intent = Intent(this, PostView1::class.java)
+                    intent.putExtra("post", post as Serializable)
+                    this.startActivity(intent)
+                    finish()
+                }
+
+
             }
         }
     }

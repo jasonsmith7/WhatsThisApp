@@ -20,10 +20,10 @@ class ExploreView1 : AppCompatActivity() {
                 this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_explore -> {
-                message.setText(R.string.title_explore)
-                return@OnNavigationItemSelectedListener true
-            }
+//            R.id.navigation_explore -> {
+//                message.setText(R.string.title_explore)
+//                return@OnNavigationItemSelectedListener true
+//            }
         }
         false
     }
