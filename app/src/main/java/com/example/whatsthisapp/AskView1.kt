@@ -38,6 +38,8 @@ class AskView1 : AppCompatActivity() {
         when (item.itemId) {
             R.id.navigation_ask -> {
               //  message.setText(R.string.title_ask)
+                val intent = Intent(this, AskView1::class.java)
+                this.startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
@@ -63,6 +65,8 @@ class AskView1 : AppCompatActivity() {
 
         val cameraButton: Button = findViewById(R.id.camera_button)
         val im: ImageView = findViewById(R.id.imageView4)
+        var desc: EditText = findViewById(R.id.editText)
+        desc.visibility = View.INVISIBLE
         im.visibility = View.INVISIBLE
 
         cameraButton.setOnClickListener {
@@ -145,7 +149,7 @@ class AskView1 : AppCompatActivity() {
 //                imageView.imageMatrix = matrix
 
                 val cameraButton = findViewById<Button>(R.id.camera_button)
-                cameraButton.visibility = View.GONE
+                cameraButton.visibility = View.INVISIBLE
                 val acceptButton = findViewById<ImageButton>(R.id.acceptButton)
                 val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
                 acceptButton.visibility = View.VISIBLE
@@ -154,6 +158,7 @@ class AskView1 : AppCompatActivity() {
 
                 //get description
                 var desc: EditText = findViewById(R.id.editText)
+                desc.visibility = View.VISIBLE
                 var post = Post()
 
 
@@ -170,8 +175,14 @@ class AskView1 : AppCompatActivity() {
                     //val imageResource = resources.getIdentifier(uri, null, packageName)
                     //var res = getResources().getDrawable(imageResource,@drawable/i);
                     imageView.setImageResource(R.drawable.askicon);
-                    imageView.rotation = 90.toFloat()
+                    imageView.rotation = -180.toFloat()
+                    imageView.rotation = 0.toFloat()
                     desc.text.clear()
+
+                    acceptButton.visibility = View.INVISIBLE
+                    cancelButton.visibility = View.INVISIBLE
+                    desc.visibility = View.INVISIBLE
+                    cameraButton.visibility = View.VISIBLE
                 }
             }
         }
