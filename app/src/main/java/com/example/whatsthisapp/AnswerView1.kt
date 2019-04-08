@@ -78,9 +78,15 @@ class AnswerView1 : AppCompatActivity() {
         val answerButt = findViewById<ImageButton>(R.id.answerButton)
         var answerText: String = ""
         var ans: TextView = findViewById(R.id.answerView)
-
+        var count: Int = 0
         dunnoButt.setOnClickListener{
-            thumb.text = (++post_th).toString()
+            if((count%2 == 0)) {
+                thumb.text = (++post_th).toString()
+                count++
+            }else{
+                thumb.text = (--post_th).toString()
+                count--
+            }
         }
         answerButt.setOnClickListener{
 //
@@ -106,7 +112,9 @@ class AnswerView1 : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Your answer has been submitted for review!",Toast.LENGTH_SHORT).show()
                 answerText=textbox.text.toString()
                 ans.text = answerText
-                bulbs.text = (++post_bu).toString()
+                var numbulb = post_bu + 1
+                post_bu++;
+                bulbs.text = (numbulb).toString()
                 // Change the app background color
                 //container.setBackgroundColor(Color.RED)
             }

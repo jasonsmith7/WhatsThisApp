@@ -33,9 +33,9 @@ class ExploreView1 : AppCompatActivity() {
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
-              //  val intent = Intent(this, AnswerView1::class.java)
-              //  this.startActivity(intent)
-                //return@OnNavigationItemSelectedListener true
+                val intent = Intent(this, AnswerView2::class.java)
+                this.startActivity(intent)
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
                 //message.setText(R.string.title_explore)

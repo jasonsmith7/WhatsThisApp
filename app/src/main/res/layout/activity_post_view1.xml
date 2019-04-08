@@ -6,7 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DAF5CC"
+        android:background="@color/colorBackground"
         tools:context=".PostView1">
 
     <LinearLayout
@@ -24,12 +24,13 @@
                 android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"/>
         <TextView
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
+                android:text="Logna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
                 android:layout_width="match_parent"
-                android:layout_height="64dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:id="@+id/postDescription"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
+                android:gravity="left"
                 android:background="@drawable/border"
                 app:layout_constraintTop_toBottomOf="@+id/postImage"
                 app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +39,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_height="50dp">
             <ImageView
                     android:layout_width="40dp"
@@ -101,7 +103,7 @@
             android:layout_marginEnd="0dp"
             android:layout_marginStart="0dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:itemTextColor="#fff"
             app:itemIconTint="#fff"
             app:layout_constraintBottom_toBottomOf="parent"

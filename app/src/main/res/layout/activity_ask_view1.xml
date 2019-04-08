@@ -6,7 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DAF5CC"
+        android:background="@color/colorBackground"
         tools:context=".AskView1">
 
     <ImageView
@@ -19,7 +19,7 @@
             android:id="@+id/navigation"
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:itemTextColor="#fff"
             app:itemIconTint="#fff"
             app:layout_constraintBottom_toBottomOf="parent"

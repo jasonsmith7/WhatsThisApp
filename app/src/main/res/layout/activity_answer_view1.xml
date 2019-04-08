@@ -6,7 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DAF5CC"
+        android:background="@color/colorBackground"
         tools:context=".AnswerView1">
 
     <LinearLayout
@@ -118,7 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-
+                        android:paddingLeft="5dp"
                         android:id="@+id/answerView"
                         android:layout_marginBottom="10dp"/>
             </LinearLayout>
@@ -130,7 +130,7 @@
             android:layout_marginEnd="0dp"
             android:layout_marginStart="0dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             app:itemTextColor="#fff"
             app:itemIconTint="#fff"
             app:layout_constraintBottom_toBottomOf="parent"
