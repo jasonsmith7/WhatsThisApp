@@ -168,11 +168,8 @@ class AskView1 : AppCompatActivity() {
                     //var res = getResources().getDrawable(imageResource,@drawable/i);
                     imageView.setImageResource(R.drawable.askicon);
                     imageView.rotation = 90.toFloat()
-
                     desc.text.clear()
                 }
-
-
             }
         }
     }
