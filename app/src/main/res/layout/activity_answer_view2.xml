@@ -7,12 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#DAF5CC"
-        tools:context=".PostView1">
+        tools:context=".AnswerView2">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="643dp" app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
         <ImageView
                 android:layout_width="253dp"
                 android:layout_height="235dp" app:srcCompat="@drawable/ic_dashboard_black_24dp"
@@ -23,22 +25,10 @@
                 app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"/>
-        <TextView
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:id="@+id/postDescription"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/border"
-                app:layout_constraintTop_toBottomOf="@+id/postImage"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="60dp">
             <ImageView
                     android:layout_width="40dp"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/thumbs" android:id="@+id/thumbs"
@@ -46,7 +36,7 @@
                     android:padding="0dp"
                     android:scaleType="fitCenter"/>
             <TextView
-                    android:text="0"
+                    android:text="234"
                     android:layout_width="40dp"
                     android:layout_height="match_parent" android:id="@+id/thumbCount" android:layout_weight="4"
                     android:padding="0dp"
@@ -59,11 +49,50 @@
                     android:padding="0dp"
                     android:scaleType="fitCenter"/>
             <TextView
-                    android:text="0"
+                    android:text="80"
                     android:layout_width="30dp"
                     android:layout_height="match_parent" android:id="@+id/answerCount" android:layout_weight="4"
                     android:gravity="center"
                     android:padding="0dp"
+                    android:scaleType="fitCenter"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border">
+            <TextView
+                    android:text="uis nostrud exercitation ullamco laboris nisi utt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/postDescription"
+                    android:layout_gravity="center_vertical"
+                    android:padding="15dp"
+                    android:gravity="center"
+
+            />
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:paddingTop="5dp">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp" app:srcCompat="@drawable/thumbsbutton"
+                    android:background="@drawable/my_button"
+                    android:id="@+id/dunnoButton" android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp" app:srcCompat="@drawable/answerbutt"
+                    android:id="@+id/answerButton" android:layout_weight="1"
+                    android:background="@drawable/my_button"
+                    android:gravity="center"
+                    android:padding="5dp"
                     android:scaleType="fitCenter"/>
         </LinearLayout>
         <ScrollView

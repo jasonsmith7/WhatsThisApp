@@ -23,21 +23,22 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.answerdialog.view.*
+import kotlin.random.Random
 
 
-class AnswerView1 : AppCompatActivity() {
+class AnswerView2 : AppCompatActivity() {
 
     private var mScaleGestureDetector: ScaleGestureDetector? = null
     private var mScaleFactor = 1.0f
     private val mImageView: ImageView? = null
-   // lateinit var toolbar: ActionBar
+    // lateinit var toolbar: ActionBar
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_ask -> {
                 val intent = Intent(this, AskView1::class.java)
                 this.startActivity(intent)
-               // return@OnNavigationItemSelectedListener true
+                // return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
 
@@ -46,7 +47,7 @@ class AnswerView1 : AppCompatActivity() {
             R.id.navigation_explore -> {
                 val intent = Intent(this, ExploreView1::class.java)
                 this.startActivity(intent)
-               // return@OnNavigationItemSelectedListener true
+                // return@OnNavigationItemSelectedListener true
             }
         }
         false
@@ -58,14 +59,20 @@ class AnswerView1 : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.isSelected
         title = "Answer Questions!"
-        val post_img: String? = intent.extras.get("Post_Img") as String
-        val post_des: String? = intent.extras.get("Post_Desc") as String
-        var post_th: Int = intent.extras.get("Post_Thumbs") as Int
-        var post_bu: Int = intent.extras.get("Post_Bulbs") as Int
+
+        val client = MockClient()
+        val posts = client.httpGetAllUserAsks()
+        //var des1: TextView = findViewById(R.id.postDescription)
+        //DownloadImageTask( findViewById(R.id.postImage)).execute(posts[0].bI?.imgLink)
+        val post_img: String? = posts[0].bI?.imgLink as String
+        val post_des: String? = posts[0].bI?.description as String
+        var post_th: Int = posts[0].bI?.thumbs as Int
+        var post_bu: Int = posts[0].bI?.bulbs as Int
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
         DownloadImageTask( findViewById(R.id.postImage)).execute(post_img)
         //grab view components
+        //des1.text = posts[0].bI?.description
         val descr: TextView = findViewById(R.id.postDescription)
         val thumb: TextView = findViewById(R.id.thumbCount)
         val bulbs: TextView = findViewById(R.id.answerCount)
@@ -80,15 +87,15 @@ class AnswerView1 : AppCompatActivity() {
         var ans: TextView = findViewById(R.id.answerView)
 
         dunnoButt.setOnClickListener{
-            thumb.text = (++post_th).toString()
+            thumb.text = (post_th++).toString()
         }
         answerButt.setOnClickListener{
-//
+            //
 //            val artistsFragment = AnswerFragment.newInstance("","")
 //            openFragment(artistsFragment)
             var customLayout = getLayoutInflater().inflate(R.layout.answerdialog, null);
             // Initialize a new instance of
-            val builder = AlertDialog.Builder(this@AnswerView1)
+            val builder = AlertDialog.Builder(this@AnswerView2)
             builder.setView(customLayout)
             var textbox: EditText= customLayout.editText4
 
@@ -106,7 +113,7 @@ class AnswerView1 : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Your answer has been submitted for review!",Toast.LENGTH_SHORT).show()
                 answerText=textbox.text.toString()
                 ans.text = answerText
-                bulbs.text = (++post_bu).toString()
+                bulbs.text = (post_bu++).toString()
                 // Change the app background color
                 //container.setBackgroundColor(Color.RED)
             }
@@ -120,7 +127,7 @@ class AnswerView1 : AppCompatActivity() {
 
             // Display a neutral button on alert dialog
             builder.setNeutralButton("Cancel"){_,_ ->
-                Toast.makeText(applicationContext,"You cancelled your answer!!!",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"You cancelled the dialog.",Toast.LENGTH_SHORT).show()
             }
 
             // Finally, make the alert dialog using builder

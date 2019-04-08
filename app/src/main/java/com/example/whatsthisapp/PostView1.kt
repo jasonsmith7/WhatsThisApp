@@ -32,7 +32,8 @@ class PostView1 : AppCompatActivity() {
                 // return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
-
+                val intent = Intent(this, AnswerView2::class.java)
+                this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {

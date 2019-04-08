@@ -42,8 +42,8 @@ class AskView1 : AppCompatActivity() {
             }
             R.id.navigation_answer -> {
               //  message.setText(R.string.title_answer)
-                //val intent = Intent(this, AnswerView1::class.java)
-                //this.startActivity(intent)
+                val intent = Intent(this, AnswerView2::class.java)
+                this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {

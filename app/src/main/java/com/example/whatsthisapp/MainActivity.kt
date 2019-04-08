@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         answerButton.setOnClickListener{
-           // val intent = Intent(this, AnswerView1::class.java)
-            //this.startActivity(intent)
+            val intent = Intent(this, AnswerView2::class.java)
+            this.startActivity(intent)
         }
         exploreButton.setOnClickListener{
             val intent = Intent(this, ExploreView1::class.java)
