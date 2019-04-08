@@ -17,6 +17,7 @@ import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.support.v4.view.ViewCompat.setScaleY
 import android.support.v4.view.ViewCompat.setScaleX
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.View
@@ -29,6 +30,7 @@ class AnswerView1 : AppCompatActivity() {
     private var mScaleGestureDetector: ScaleGestureDetector? = null
     private var mScaleFactor = 1.0f
     private val mImageView: ImageView? = null
+   // lateinit var toolbar: ActionBar
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -55,7 +57,7 @@ class AnswerView1 : AppCompatActivity() {
         setContentView(R.layout.activity_answer_view1)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.isSelected
-        //toolbar.title = "Artists"
+        title = "Answer Questions!"
         val post_img: String? = intent.extras.get("Post_Img") as String
         val post_des: String? = intent.extras.get("Post_Desc") as String
         var post_th: Int = intent.extras.get("Post_Thumbs") as Int

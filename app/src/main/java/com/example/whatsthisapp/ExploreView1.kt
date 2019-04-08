@@ -14,6 +14,7 @@ import android.provider.MediaStore
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
+import android.support.v7.app.ActionBar
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -23,7 +24,7 @@ import java.io.Serializable
 
 
 class ExploreView1 : AppCompatActivity() {
-
+   // lateinit var toolbar: ActionBar
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_ask -> {
@@ -32,8 +33,8 @@ class ExploreView1 : AppCompatActivity() {
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
-                val intent = Intent(this, AnswerView1::class.java)
-                this.startActivity(intent)
+              //  val intent = Intent(this, AnswerView1::class.java)
+              //  this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
@@ -47,7 +48,7 @@ class ExploreView1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_explore_view1)
-
+        title = "Click an image for post details"
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()
         var des1: TextView = findViewById(R.id.textView)
@@ -65,7 +66,7 @@ class ExploreView1 : AppCompatActivity() {
         des3.text = posts[2].bI?.description
         des4.text = posts[3].bI?.description
 
-
+        //init image buttons
         var butt1: ImageButton = findViewById(R.id.postImage1)
         var butt2: ImageButton = findViewById(R.id.postImage2)
         var butt3: ImageButton = findViewById(R.id.postImage3)
@@ -127,10 +128,8 @@ class ExploreView1 : AppCompatActivity() {
                 Log.e("Error", e.message)
                 e.printStackTrace()
             }
-
             return mIcon11
         }
-
         override fun onPostExecute(result: Bitmap) {
             bmImage.setImageBitmap(result)
         }

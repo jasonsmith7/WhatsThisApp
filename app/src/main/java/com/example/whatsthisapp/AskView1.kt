@@ -27,12 +27,13 @@ import android.media.Image
 import android.widget.EditText
 import java.io.Serializable
 import android.R.attr.bitmap
+import android.support.v7.app.ActionBar
 import java.io.ByteArrayOutputStream
 
 
 class AskView1 : AppCompatActivity() {
 
-
+    //lateinit var toolbar: ActionBar
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_ask -> {
@@ -41,8 +42,8 @@ class AskView1 : AppCompatActivity() {
             }
             R.id.navigation_answer -> {
               //  message.setText(R.string.title_answer)
-                val intent = Intent(this, AnswerView1::class.java)
-                this.startActivity(intent)
+                //val intent = Intent(this, AnswerView1::class.java)
+                //this.startActivity(intent)
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
@@ -58,6 +59,7 @@ class AskView1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ask_view1)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        title = "Ask A Question?"
 
         val cameraButton: Button = findViewById(R.id.camera_button)
         val im: ImageView = findViewById(R.id.imageView4)
@@ -87,6 +89,7 @@ class AskView1 : AppCompatActivity() {
                 launchCamera()
             }
         }
+
     }
 
 
@@ -147,7 +150,7 @@ class AskView1 : AppCompatActivity() {
 
 
                 //get description
-                val desc: EditText = findViewById(R.id.editText)
+                var desc: EditText = findViewById(R.id.editText)
                 var post = Post()
 
 
@@ -158,6 +161,13 @@ class AskView1 : AppCompatActivity() {
                     intent.putExtra("newAsk", post as Serializable)
                     this.startActivity(intent)
                     finish()
+                }
+                cancelButton.setOnClickListener{
+                    val uri = "@drawable/ic_launcher_background.xml"
+                    val imageResource = resources.getIdentifier(uri, null, packageName)
+                    var res = getResources().getDrawable(imageResource);
+                    imageView.setImageDrawable(res);
+                    desc.text.clear()
                 }
 
 
