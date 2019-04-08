@@ -41,7 +41,8 @@ class AnswerView2 : AppCompatActivity() {
                 // return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
-
+                val intent = Intent(this, AnswerView2::class.java)
+                this.startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
@@ -121,6 +122,10 @@ class AnswerView2 : AppCompatActivity() {
                 answerText=textbox.text.toString()
                 ans.text = answerText
                 bulbs.text = (++post_bu).toString()
+                if((count%2 != 0)) {
+                    thumb.text = (--post_th).toString()
+                    --count
+                }
                 // Change the app background color
                 //container.setBackgroundColor(Color.RED)
             }

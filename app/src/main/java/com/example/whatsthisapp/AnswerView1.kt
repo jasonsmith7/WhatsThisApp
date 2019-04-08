@@ -115,8 +115,11 @@ class AnswerView1 : AppCompatActivity() {
                 var numbulb = post_bu + 1
                 post_bu++;
                 bulbs.text = (numbulb).toString()
-                // Change the app background color
-                //container.setBackgroundColor(Color.RED)
+                if((count%2 != 0)) {
+                    thumb.text = (--post_th).toString()
+                    --count
+                }
+
             }
 
 
