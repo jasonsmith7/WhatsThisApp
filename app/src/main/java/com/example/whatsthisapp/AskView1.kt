@@ -163,10 +163,12 @@ class AskView1 : AppCompatActivity() {
                     finish()
                 }
                 cancelButton.setOnClickListener{
-                    val uri = "@drawable/ic_launcher_background.xml"
-                    val imageResource = resources.getIdentifier(uri, null, packageName)
-                    var res = getResources().getDrawable(imageResource);
-                    imageView.setImageDrawable(res);
+                    //val uri = "@drawable/ic_launcher_background.xml"
+                    //val imageResource = resources.getIdentifier(uri, null, packageName)
+                    //var res = getResources().getDrawable(imageResource,@drawable/i);
+                    imageView.setImageResource(R.drawable.askicon);
+                    imageView.rotation = 90.toFloat()
+
                     desc.text.clear()
                 }
 
