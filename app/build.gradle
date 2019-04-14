@@ -44,7 +44,7 @@ dependencies {
     //implementation 'com.github.chrisbanes:PhotoView:latest.release.here'
     //  implementation 'com.android.support:gridlayout-v7:28.0.0'''
     //implementation 'com.jakewharton:butterknife:8.8.1'
-    //kapt 'com.jakewharton:butterknife-compiler:8.8.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
 //
     //implementation 'com.facebook.fresco:fresco:1.9.0'
 //

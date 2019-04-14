@@ -1,29 +1,21 @@
 package com.example.whatsthisapp
 
-import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Color
-import android.media.Image
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_answer_view1.*
-import android.text.method.Touch.onTouchEvent
-import android.view.MotionEvent
 import android.view.ScaleGestureDetector
-import android.support.v4.view.ViewCompat.setScaleY
-import android.support.v4.view.ViewCompat.setScaleX
-import android.support.v7.app.ActionBar
 import android.support.v7.app.AlertDialog
 import android.util.Log
-import android.view.View
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_answer_view2.*
 import kotlinx.android.synthetic.main.answerdialog.view.*
-import kotlin.random.Random
+import kotlinx.android.synthetic.main.activity_answer_view2.navigation as navigation1
 
 
 class AnswerView2 : AppCompatActivity() {
@@ -37,8 +29,9 @@ class AnswerView2 : AppCompatActivity() {
         when (item.itemId) {
             R.id.navigation_ask -> {
                 val intent = Intent(this, AskView1::class.java)
+               // intent.putExtra()
                 this.startActivity(intent)
-                // return@OnNavigationItemSelectedListener true
+//                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
                 val intent = Intent(this, AnswerView2::class.java)
@@ -48,7 +41,7 @@ class AnswerView2 : AppCompatActivity() {
             R.id.navigation_explore -> {
                 val intent = Intent(this, ExploreView1::class.java)
                 this.startActivity(intent)
-                // return@OnNavigationItemSelectedListener true
+//                return@OnNavigationItemSelectedListener true
             }
         }
         false
@@ -59,7 +52,7 @@ class AnswerView2 : AppCompatActivity() {
         setContentView(R.layout.activity_answer_view1)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.isSelected
-        title = "Answer Questions!"
+//        title = "Answer Questions!"
 
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()

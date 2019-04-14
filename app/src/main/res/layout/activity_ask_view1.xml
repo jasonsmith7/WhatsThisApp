@@ -3,79 +3,91 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground"
+        android:background="@drawable/gradient"
         tools:context=".AskView1">
 
-    <ImageView
-            android:layout_width="417dp"
-            android:layout_height="273dp" app:srcCompat="@drawable/askicon" android:id="@+id/image_view"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:layout_constraintBottom_toTopOf="@+id/navigation">
+        <ImageView
+                android:layout_width="257dp"
+                android:layout_height="70dp" app:srcCompat="@drawable/home_ask1"
+                android:id="@+id/imageView4" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="6dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="77dp" android:layout_marginStart="77dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="77dp" android:layout_marginRight="77dp" android:visibility="visible"/>
+        <ImageView
+                android:layout_width="417dp"
+                android:layout_height="273dp" app:srcCompat="@drawable/placeholder" android:id="@+id/image_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+        <Button
+                android:text="Take a Picture!"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/camera_button"
+                android:background="@drawable/my_button"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:radius="3dip"
+
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/image_view"
+        />
+        <EditText
+                android:layout_width="373dp"
+                android:layout_height="91dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editText"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="19dp"
+                android:layout_marginStart="19dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="19dp"
+                android:layout_marginRight="19dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:hint="Explain your photo!" android:visibility="visible" android:textStyle="bold"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/camera_button"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="match_parent">
+            <ImageButton
+                    android:layout_width="155dp"
+                    android:layout_height="83dp" app:srcCompat="@drawable/accept"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/acceptButton"
+                    android:layout_marginRight="10dp"
+                    android:visibility="invisible"/>
+            <ImageButton
+                    android:layout_width="155dp"
+                    android:layout_height="83dp"
+                    app:srcCompat="@drawable/cancel"
+                    android:id="@+id/cancelButton"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="invisible"/>
+        </LinearLayout>
+    </LinearLayout>
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:background="@color/colorAccent"
-            app:itemTextColor="#fff"
-            app:itemIconTint="#fff"
+            app:itemTextColor="@drawable/bottom_nav"
+            app:itemIconTint="@drawable/bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation"/>
-    <Button
-            android:text="Take a Picture!"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/camera_button"
-            android:background="@drawable/my_button"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="162dp"
-            android:layout_marginRight="162dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="162dp" android:layout_marginStart="162dp"
-            android:radius="3dip"
-
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/navigation"
-    />
-    <ImageView
-            android:layout_width="257dp"
-            android:layout_height="80dp" app:srcCompat="@drawable/logov1"
-            android:id="@+id/imageView4" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="6dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="77dp" android:layout_marginStart="77dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="77dp" android:layout_marginRight="77dp"/>
-
-    <EditText
-            android:layout_width="373dp"
-            android:layout_height="91dp"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/editText"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="19dp"
-            android:layout_marginStart="19dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="19dp"
-            android:layout_marginRight="19dp" app:layout_constraintTop_toBottomOf="@+id/image_view"
-            android:layout_marginTop="8dp" app:layout_constraintHorizontal_bias="0.0"
-            android:hint="Explain your photo!" android:visibility="visible"/>
-    <ImageButton
-            android:layout_width="155dp"
-            android:layout_height="83dp" app:srcCompat="@drawable/accept"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:id="@+id/acceptButton" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="40dp" android:layout_marginStart="40dp" android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/navigation"
-            android:visibility="invisible"/>
-    <ImageButton
-            android:layout_width="155dp"
-            android:layout_height="83dp" app:srcCompat="@drawable/cancel"
-            android:id="@+id/cancelButton" android:layout_marginBottom="20dp"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/navigation"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="40dp"
-            android:layout_marginRight="40dp" android:visibility="invisible"/>
+            app:menu="@menu/navigation_ask"/>
 
 </android.support.constraint.ConstraintLayout>

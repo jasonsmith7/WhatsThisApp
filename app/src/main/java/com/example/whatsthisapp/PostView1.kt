@@ -6,16 +6,12 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
-import kotlinx.android.synthetic.main.activity_answer_view1.*
-import android.text.method.Touch.onTouchEvent
-import android.view.MotionEvent
+import kotlinx.android.synthetic.main.activity_post_view1.*
 import android.view.ScaleGestureDetector
-import android.support.v4.view.ViewCompat.setScaleY
-import android.support.v4.view.ViewCompat.setScaleX
-import android.view.View
 import android.widget.TextView
-import org.w3c.dom.Text
-import java.io.Serializable
+import kotlinx.android.synthetic.main.activity_answer_view1.postImage
+import kotlinx.android.synthetic.main.activity_post_view1.*
+import kotlinx.android.synthetic.main.activity_answer_view1.navigation as navigation1
 
 
 class PostView1 : AppCompatActivity() {

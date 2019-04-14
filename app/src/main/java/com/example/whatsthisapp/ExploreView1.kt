@@ -1,26 +1,16 @@
 package com.example.whatsthisapp
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_explore_view1.*
-import com.example.whatsthisapp.MockClient
-import java.net.URI
-import android.provider.MediaStore
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
-import android.support.v7.app.ActionBar
 import android.util.Log
-import android.view.View
-import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
-import java.io.Serializable
 
 
 class ExploreView1 : AppCompatActivity() {
@@ -30,12 +20,12 @@ class ExploreView1 : AppCompatActivity() {
             R.id.navigation_ask -> {
                 val intent = Intent(this, AskView1::class.java)
                 this.startActivity(intent)
-                //return@OnNavigationItemSelectedListener true
+//                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
                 val intent = Intent(this, AnswerView2::class.java)
                 this.startActivity(intent)
-                return@OnNavigationItemSelectedListener true
+//                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
                 //message.setText(R.string.title_explore)
@@ -48,7 +38,9 @@ class ExploreView1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_explore_view1)
-        title = "Click an image for post details"
+//        title = "Click an image for post details"
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.isSelected
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()
         var des1: TextView = findViewById(R.id.textView)
@@ -113,7 +105,7 @@ class ExploreView1 : AppCompatActivity() {
 
 
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
     }
 
     private inner class DownloadImageTask(internal var bmImage: ImageButton) : AsyncTask<String, Void, Bitmap>() {

@@ -27,6 +27,7 @@ import android.media.Image
 import android.widget.EditText
 import java.io.Serializable
 import android.R.attr.bitmap
+import android.graphics.Camera
 import android.support.v7.app.ActionBar
 import java.io.ByteArrayOutputStream
 
@@ -46,12 +47,12 @@ class AskView1 : AppCompatActivity() {
               //  message.setText(R.string.title_answer)
                 val intent = Intent(this, AnswerView2::class.java)
                 this.startActivity(intent)
-                //return@OnNavigationItemSelectedListener true
+//                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
                 val intent = Intent(this, ExploreView1::class.java)
                 this.startActivity(intent)
-               // return@OnNavigationItemSelectedListener true
+//                return@OnNavigationItemSelectedListener true
             }
         }
         false
@@ -61,13 +62,14 @@ class AskView1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ask_view1)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        title = "Ask A Question?"
+        navigation.isSelected
+        //title = "Ask A Question?"
 
         val cameraButton: Button = findViewById(R.id.camera_button)
         val im: ImageView = findViewById(R.id.imageView4)
         var desc: EditText = findViewById(R.id.editText)
         desc.visibility = View.INVISIBLE
-        im.visibility = View.INVISIBLE
+        //im.visibility = View.INVISIBLE
 
         cameraButton.setOnClickListener {
 
@@ -131,7 +133,7 @@ class AskView1 : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    internal fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if( requestCode == 9090){

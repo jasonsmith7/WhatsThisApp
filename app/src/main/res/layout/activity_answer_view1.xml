@@ -4,57 +4,70 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/container"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground"
+        android:background="@drawable/gradient"
         tools:context=".AnswerView1">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="643dp" app:layout_constraintBottom_toTopOf="@+id/navigation"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
         <ImageView
-                android:layout_width="253dp"
-                android:layout_height="235dp" app:srcCompat="@drawable/ic_dashboard_black_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/home_answer2"
+                android:id="@+id/imageView2"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/placeholder"
                 android:id="@+id/postImage"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/imageView9"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"/>
+                />
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-            <ImageView
+                android:layout_height="70dp">
+            <ImageButton
                     android:layout_width="40dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/thumbs" android:id="@+id/thumbs"
+                    android:layout_height="wrap_content" android:id="@+id/dunnoButton"
                     android:layout_weight="4"
-                    android:padding="0dp"
-                    android:scaleType="fitCenter"/>
+                    android:layout_marginLeft="10dp"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter" android:src="@drawable/thumbs"
+                    android:background="@drawable/my_button"/>
             <TextView
                     android:text="234"
-                    android:layout_width="40dp"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent" android:id="@+id/thumbCount" android:layout_weight="4"
                     android:padding="0dp"
                     android:gravity="center"
-                    android:scaleType="fitCenter"/>
-            <ImageView
+                    android:scaleType="fitCenter" app:fontFamily="@font/allerta" android:typeface="sans"
+                    android:textSize="30sp"/>
+            <ImageButton
                     android:layout_width="40dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/answers" android:id="@+id/answers"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/answers"
+                    android:id="@+id/answerButton"
                     android:layout_weight="4"
-                    android:padding="0dp"
-                    android:scaleType="fitCenter"/>
+                    android:padding="5dp"
+                    android:scaleType="centerInside" android:background="@drawable/my_button"/>
             <TextView
                     android:text="80"
-                    android:layout_width="30dp"
+                    android:layout_width="20dp"
                     android:layout_height="match_parent" android:id="@+id/answerCount" android:layout_weight="4"
                     android:gravity="center"
+
                     android:padding="0dp"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter" app:fontFamily="@font/allerta" android:typeface="sans"
+                    android:textSize="30sp"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -71,29 +84,7 @@
                     android:padding="15dp"
                     android:gravity="center"
 
-            />
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="95dp"
-                android:paddingTop="5dp">
-            <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp" app:srcCompat="@drawable/thumbsbutton"
-                    android:background="@drawable/my_button"
-                    android:id="@+id/dunnoButton" android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"/>
-            <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp" app:srcCompat="@drawable/answerbutt"
-                    android:id="@+id/answerButton" android:layout_weight="1"
-                    android:background="@drawable/my_button"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"/>
+                    app:fontFamily="@font/allerta" android:typeface="sans" android:textSize="18sp"/>
         </LinearLayout>
         <ScrollView
                 android:layout_width="match_parent"
@@ -131,11 +122,11 @@
             android:layout_marginStart="0dp"
             android:layout_height="60dp"
             android:background="@color/colorAccent"
-            app:itemTextColor="#fff"
-            app:itemIconTint="#fff"
+            app:itemTextColor="@drawable/bottom_nav"
+            app:itemIconTint="@drawable/bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation"/>
+            app:menu="@menu/navigation_ask"/>
 
 </android.support.constraint.ConstraintLayout>

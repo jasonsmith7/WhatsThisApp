@@ -4,27 +4,33 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/container"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground"
+        android:background="@drawable/gradient"
         tools:context=".ExploreView1">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="395dp"
-            android:layout_height="500dp"
+            android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toTopOf="@+id/navigation"
             app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="70dp" app:srcCompat="@drawable/home_explore1"
+                android:id="@+id/imageView"/>
         <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="match_parent"
+        android:background="@drawable/border">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical">
                 <LinearLayout
@@ -34,7 +40,7 @@
                         android:layout_height="wrap_content">
                     <ImageButton
                             android:layout_width="50dp"
-                            android:layout_height="150dp" app:srcCompat="@drawable/askicon"
+                            android:layout_height="150dp" app:srcCompat="@drawable/placeholder"
                             android:background="@drawable/border"
                             android:layout_weight="0.9"
                             android:padding="10dp"
@@ -60,7 +66,7 @@
                         android:layout_height="wrap_content">
                     <ImageButton
                             android:layout_width="50dp"
-                            android:layout_height="150dp" app:srcCompat="@drawable/askicon"
+                            android:layout_height="150dp" app:srcCompat="@drawable/placeholder"
                             android:background="@drawable/border"
                             android:layout_weight="0.9"
                             android:padding="10dp"
@@ -85,7 +91,7 @@
                     <ImageButton
                             android:layout_width="50dp"
                             android:layout_height="150dp"
-                            app:srcCompat="@drawable/askicon"
+                            app:srcCompat="@drawable/placeholder"
                             android:background="@drawable/border"
                             android:layout_weight="0.9"
                             android:padding="10dp"
@@ -112,7 +118,7 @@
                     <ImageButton
                             android:layout_width="50dp"
                             android:layout_height="150dp"
-                            app:srcCompat="@drawable/askicon"
+                            app:srcCompat="@drawable/placeholder"
                             android:background="@drawable/border"
                             android:layout_weight="0.9"
                             android:padding="10dp"
@@ -142,11 +148,11 @@
             android:layout_marginStart="0dp"
             android:layout_height="60dp"
             android:background="@color/colorAccent"
-            app:itemTextColor="#fff"
-            app:itemIconTint="#fff"
+            app:itemTextColor="@drawable/bottom_nav"
+            app:itemIconTint="@drawable/bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation"/>
+            app:menu="@menu/navigation_ask"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -4,9 +4,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/container"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground"
+        android:background="@drawable/gradient"
         tools:context=".PostView1">
 
     <LinearLayout
@@ -14,28 +15,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <ImageView
-                android:layout_width="253dp"
-                android:layout_height="235dp" app:srcCompat="@drawable/ic_dashboard_black_24dp"
-                android:id="@+id/postImage"
-                android:layout_marginTop="18dp"
-                android:layout_gravity="center_horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/imageView9"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"/>
-        <TextView
-                android:text="Logna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
                 android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/_mypost"
+                android:id="@+id/imageView3"/>
+        <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:id="@+id/postDescription"
-                android:layout_marginTop="10dp"
-                android:gravity="left"
-                android:background="@drawable/border"
-                app:layout_constraintTop_toBottomOf="@+id/postImage"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"/>
+                app:srcCompat="@drawable/placeholder"
+                android:id="@+id/postImage"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -68,6 +59,19 @@
                     android:padding="0dp"
                     android:scaleType="fitCenter"/>
         </LinearLayout>
+        <TextView
+                android:text="Logna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/postDescription"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toBottomOf="@+id/postImage"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"/>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -104,11 +108,11 @@
             android:layout_marginStart="0dp"
             android:layout_height="60dp"
             android:background="@color/colorAccent"
-            app:itemTextColor="#fff"
-            app:itemIconTint="#fff"
+            app:itemTextColor="@drawable/bottom_nav"
+            app:itemIconTint="@drawable/bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/navigation"/>
+            app:menu="@menu/navigation_ask"/>
 
 </android.support.constraint.ConstraintLayout>
