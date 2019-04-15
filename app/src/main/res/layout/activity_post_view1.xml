@@ -7,7 +7,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
+        android:background="@drawable/bg1"
         tools:context=".PostView1">
 
     <LinearLayout

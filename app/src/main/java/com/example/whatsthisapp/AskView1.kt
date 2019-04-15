@@ -133,7 +133,7 @@ class AskView1 : AppCompatActivity() {
         }
     }
 
-    internal fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if( requestCode == 9090){
@@ -151,7 +151,7 @@ class AskView1 : AppCompatActivity() {
 //                imageView.imageMatrix = matrix
 
                 val cameraButton = findViewById<Button>(R.id.camera_button)
-                cameraButton.visibility = View.INVISIBLE
+                cameraButton.visibility = View.GONE
                 val acceptButton = findViewById<ImageButton>(R.id.acceptButton)
                 val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
                 acceptButton.visibility = View.VISIBLE

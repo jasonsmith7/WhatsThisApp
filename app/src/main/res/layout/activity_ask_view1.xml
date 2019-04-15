@@ -7,7 +7,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
+        android:background="@drawable/bg"
         tools:context=".AskView1">
 
     <LinearLayout
@@ -24,7 +24,7 @@
                 android:layout_marginEnd="77dp" android:layout_marginRight="77dp" android:visibility="visible"/>
         <ImageView
                 android:layout_width="417dp"
-                android:layout_height="273dp" app:srcCompat="@drawable/placeholder" android:id="@+id/image_view"
+                android:layout_height="200dp" app:srcCompat="@drawable/placeholder" android:id="@+id/image_view"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
@@ -33,6 +33,7 @@
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/camera_button"
+                android:textColor="#000"
                 android:background="@drawable/my_button"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -51,8 +52,9 @@
                 android:layout_marginEnd="19dp"
                 android:layout_marginRight="19dp"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:hint="Explain your photo!" android:visibility="visible" android:textStyle="bold"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/camera_button"/>
+                android:hint="Explain your photo!" android:visibility="invisible" android:textStyle="bold"
+                android:layout_marginTop="8dp" android:background="@drawable/border" android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/camera_button"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -62,8 +64,7 @@
             <ImageButton
                     android:layout_width="155dp"
                     android:layout_height="83dp" app:srcCompat="@drawable/accept"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerInside"
                     android:id="@+id/acceptButton"
                     android:layout_marginRight="10dp"
                     android:visibility="invisible"/>
@@ -73,8 +74,7 @@
                     app:srcCompat="@drawable/cancel"
                     android:id="@+id/cancelButton"
                     android:layout_marginLeft="10dp"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerInside"
                     android:visibility="invisible"/>
         </LinearLayout>
     </LinearLayout>

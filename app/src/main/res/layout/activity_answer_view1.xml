@@ -7,7 +7,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
+        android:background="@drawable/bg1"
         tools:context=".AnswerView1">
 
     <LinearLayout
@@ -21,21 +21,22 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:padding="1dp"
                 app:srcCompat="@drawable/home_answer2"
                 android:id="@+id/imageView2"/>
         <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 app:srcCompat="@drawable/placeholder"
                 android:id="@+id/postImage"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"
-                />
+        />
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="70dp">
+                android:layout_height="55dp">
             <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="wrap_content" android:id="@+id/dunnoButton"
@@ -84,12 +85,12 @@
                     android:padding="15dp"
                     android:gravity="center"
 
-                    app:fontFamily="@font/allerta" android:typeface="sans" android:textSize="18sp"/>
+                    app:fontFamily="@font/allerta" android:typeface="sans" android:textSize="18sp"
+                    android:textColor="#000"/>
         </LinearLayout>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_marginTop="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
