@@ -7,7 +7,8 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg1"
+        android:screenOrientation="portrait"
+        android:background="@drawable/bg"
         tools:context=".PostView1">
 
     <LinearLayout
@@ -18,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 app:srcCompat="@drawable/_mypost"
+                android:background="@drawable/border"
                 android:id="@+id/imageView3"/>
         <ImageView
                 android:layout_width="wrap_content"
@@ -41,7 +43,13 @@
             <TextView
                     android:text="0"
                     android:layout_width="40dp"
-                    android:layout_height="match_parent" android:id="@+id/thumbCount" android:layout_weight="4"
+                    android:layout_height="match_parent"
+                    android:id="@+id/thumbCount"
+                    android:layout_weight="4"
+                    android:textColor="#fff"
+                    app:fontFamily="@font/allerta"
+                    android:textSize="30sp"
+                    android:typeface="sans"
                     android:padding="0dp"
                     android:gravity="center"
                     android:scaleType="fitCenter"/>
@@ -54,7 +62,13 @@
             <TextView
                     android:text="0"
                     android:layout_width="30dp"
-                    android:layout_height="match_parent" android:id="@+id/answerCount" android:layout_weight="4"
+                    android:layout_height="match_parent"
+                    android:id="@+id/answerCount"
+                    android:layout_weight="4"
+                    android:textColor="#fff"
+                    app:fontFamily="@font/allerta"
+                    android:textSize="30sp"
+                    android:typeface="sans"
                     android:gravity="center"
                     android:padding="0dp"
                     android:scaleType="fitCenter"/>
@@ -67,11 +81,15 @@
                 android:id="@+id/postDescription"
                 android:layout_marginTop="10dp"
                 android:gravity="left"
+                android:textColor="#fff"
+                app:fontFamily="@font/allerta"
+                android:textSize="18sp"
+                android:typeface="sans"
                 android:background="@drawable/border"
                 app:layout_constraintTop_toBottomOf="@+id/postImage"
                 app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"/>
+                android:layout_marginRight="8dp" android:textStyle="bold" android:fontFamily="@font/allerta"/>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -86,6 +104,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="#fff"
+                        app:fontFamily="@font/allerta"
+                        android:textSize="20sp"
+                        android:typeface="sans"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:id="@+id/answersTitle"
@@ -95,7 +117,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-
+                        android:textColor="#fff"
+                        app:fontFamily="@font/allerta"
+                        android:textSize="12sp"
+                        android:paddingLeft="20dp"
+                        android:typeface="sans"
                         android:id="@+id/answerView"
                         android:layout_marginBottom="10dp"/>
             </LinearLayout>

@@ -7,8 +7,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg1"
-        tools:context=".ExploreView1">
+        android:background="@drawable/bg"
+        tools:context=".ExploreView1"
+        android:screenOrientation="portrait">
 
     <LinearLayout
             android:orientation="vertical"
@@ -25,6 +26,7 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:padding="1dp"
+
                 android:layout_height="70dp" app:srcCompat="@drawable/home_explore1"
                 android:id="@+id/imageView"/>
         <ScrollView
@@ -57,7 +59,8 @@
                             android:gravity="left"
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
-                            android:layout_height="wrap_content" android:id="@+id/textView"/>
+                            android:layout_height="wrap_content" android:id="@+id/textView"
+                            android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -81,7 +84,8 @@
                             android:gravity="left"
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
-                            android:layout_height="wrap_content" android:id="@+id/textView2"/>
+                            android:layout_height="wrap_content" android:id="@+id/textView2"
+                            android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -108,7 +112,7 @@
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView3"/>
+                            android:id="@+id/textView3" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -136,7 +140,7 @@
                             android:gravity="left"
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
-                            android:id="@+id/textView4"/>
+                            android:id="@+id/textView4" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

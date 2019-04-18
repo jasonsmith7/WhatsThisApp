@@ -83,7 +83,7 @@ class AnswerView1 : AppCompatActivity() {
 //
 //            val artistsFragment = AnswerFragment.newInstance("","")
 //            openFragment(artistsFragment)
-            var customLayout = getLayoutInflater().inflate(R.layout.answerdialog, null);
+            var customLayout = getLayoutInflater().inflate(R.layout.answerdialog, null)
             // Initialize a new instance of
             val builder = AlertDialog.Builder(this@AnswerView1)
             builder.setView(customLayout)

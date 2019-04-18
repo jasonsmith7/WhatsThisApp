@@ -7,7 +7,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg1"
+        android:background="@drawable/bg"
+        android:screenOrientation="portrait"
+
         tools:context=".AnswerView1">
 
     <LinearLayout
@@ -23,14 +25,15 @@
                 android:layout_height="70dp"
                 android:padding="1dp"
                 app:srcCompat="@drawable/home_answer2"
+                android:background="@drawable/border"
                 android:id="@+id/imageView2"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/placeholder"
                 android:id="@+id/postImage"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_gravity="center_horizontal"
         />
         <LinearLayout
@@ -51,8 +54,12 @@
                     android:layout_height="match_parent" android:id="@+id/thumbCount" android:layout_weight="4"
                     android:padding="0dp"
                     android:gravity="center"
-                    android:scaleType="fitCenter" app:fontFamily="@font/allerta" android:typeface="sans"
-                    android:textSize="30sp"/>
+                    android:textColor="#fff"
+                    app:fontFamily="@font/allerta"
+                    android:textSize="30sp"
+                    android:typeface="sans"
+                    android:scaleType="fitCenter"
+                    />
             <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/answers"
@@ -65,10 +72,12 @@
                     android:layout_width="20dp"
                     android:layout_height="match_parent" android:id="@+id/answerCount" android:layout_weight="4"
                     android:gravity="center"
-
+                    android:textColor="#fff"
+                    app:fontFamily="@font/allerta"
+                    android:textSize="30sp"
+                    android:typeface="sans"
                     android:padding="0dp"
-                    android:scaleType="fitCenter" app:fontFamily="@font/allerta" android:typeface="sans"
-                    android:textSize="30sp"/>
+                    android:scaleType="fitCenter"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -84,9 +93,10 @@
                     android:layout_gravity="center_vertical"
                     android:padding="15dp"
                     android:gravity="center"
-
-                    app:fontFamily="@font/allerta" android:typeface="sans" android:textSize="18sp"
-                    android:textColor="#000"/>
+                    app:fontFamily="@font/allerta"
+                    android:typeface="sans"
+                    android:textSize="18sp"
+                    android:textColor="#fff"/>
         </LinearLayout>
         <ScrollView
                 android:layout_width="match_parent"
@@ -102,7 +112,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        app:fontFamily="@font/allerta"
+                        android:textSize="20sp"
+                        android:typeface="sans"
                         android:id="@+id/answersTitle"
                         android:layout_marginBottom="10dp"/>
                 <TextView
@@ -110,7 +123,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:paddingLeft="5dp"
+                        android:textColor="#fff"
+                        app:fontFamily="@font/allerta"
+                        android:textSize="12sp"
+                        android:typeface="sans"
+                        android:paddingLeft="20dp"
                         android:id="@+id/answerView"
                         android:layout_marginBottom="10dp"/>
             </LinearLayout>

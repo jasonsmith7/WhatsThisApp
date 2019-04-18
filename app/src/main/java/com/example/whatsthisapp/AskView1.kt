@@ -48,12 +48,12 @@ import java.util.*
 
 
 class AskView1 : AppCompatActivity() {
-    private var mCurrentPhotoPath: String = ""
-    private var filePath: Uri? = null
-    private val TAKE_PHOTO_REQUEST = 101
-    private var photoFile: File? = null
+//    private var mCurrentPhotoPath: String = ""
+//    private var filePath: Uri? = null
+//    private val TAKE_PHOTO_REQUEST = 101
+//    private var photoFile: File? = null
     lateinit var imageView: ImageView
-    private val CAPTURE_IMAGE_REQUEST = 1
+//    private val CAPTURE_IMAGE_REQUEST = 1
 //    @JvmField @BindView(R.id.image_view)
 //    var imgvPhoto: SimpleDraweeView? = null
 //    @JvmField @BindView(R.id.fab_capture)
@@ -221,6 +221,7 @@ val CAMERA_REQUEST_CODE = 0
                 photoImageView.setImageBitmap(data.extras.get("data") as Bitmap)
             }*/
                 if (resultCode == Activity.RESULT_OK) {
+                    var passPath = imageFilePath
                     var imageData= setScaledBitmap()
                     imageView.setImageBitmap(imageData)
                     imageView.rotation = 90.toFloat()
@@ -244,19 +245,28 @@ val CAMERA_REQUEST_CODE = 0
 
 
                     acceptButton.setOnClickListener {
-                        post.img = imageData1
+                        post.img = passPath
                         post.description = desc.text.toString()
                         val intent = Intent(this, PostView1::class.java)
-                        intent.putExtra("newAsk", post as Serializable)
+//                        var bundle = Bundle()
+//                        bundle.putByteArray("image",imageData1)
+//                        var baos = ByteArrayOutputStream()
+//                        imageData.compress(Bitmap.CompressFormat.PNG, 100, baos)
+//                        var b = baos.toByteArray()
+//                        intent.putExtra("post", b)
+                        intent.putExtra("post", post)
+//                        intent.putExtra("image", imageFilePath)
+//                        intent.putExtra("desc", post.description)
                         this.startActivity(intent)
-                        finish()
+                        //finish()
+
                     }
                     cancelButton.setOnClickListener {
                         //val uri = "@drawable/ic_launcher_background.xml"
                         //val imageResource = resources.getIdentifier(uri, null, packageName)
                         //var res = getResources().getDrawable(imageResource,@drawable/i);
-                        imageView.setImageResource(R.drawable.askicon);
-                        imageView.rotation = -180.toFloat()
+                        imageView.setImageResource(R.drawable.placeholder)
+//                      imageView.rotation = -180.toFloat()
                         imageView.rotation = 0.toFloat()
                         desc.text.clear()
 
