@@ -13,7 +13,6 @@ import android.view.ScaleGestureDetector
 import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_answer_view2.*
 import kotlinx.android.synthetic.main.answerdialog.view.*
 import kotlinx.android.synthetic.main.activity_answer_view2.navigation as navigation1
 
@@ -64,7 +63,7 @@ class AnswerView2 : AppCompatActivity() {
         var post_bu: Int = posts[0].bI?.bulbs as Int
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
-        DownloadImageTask( findViewById(R.id.postImage)).execute(post_img)
+        DownloadImageTask(findViewById(R.id.postImage)).execute(post_img)
         //grab view components
         //des1.text = posts[0].bI?.description
         val descr: TextView = findViewById(R.id.postDescription)
@@ -150,26 +149,7 @@ class AnswerView2 : AppCompatActivity() {
 
 
     }
-    private inner class DownloadImageTask(internal var bmImage: ImageView) : AsyncTask<String, Void, Bitmap>() {
 
-        override fun doInBackground(vararg urls: String): Bitmap? {
-            val urldisplay = urls[0]
-            var mIcon11: Bitmap? = null
-            try {
-                val `in` = java.net.URL(urldisplay).openStream()
-                mIcon11 = BitmapFactory.decodeStream(`in`)
-            } catch (e: Exception) {
-                Log.e("Error", e.message)
-                e.printStackTrace()
-            }
-
-            return mIcon11
-        }
-
-        override fun onPostExecute(result: Bitmap) {
-            bmImage.setImageBitmap(result)
-        }
-    }
     private fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         // val currFragment: Fragment? = getVisibleFragment()
@@ -178,6 +158,29 @@ class AnswerView2 : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.show(fragment)
         transaction.commit()
+    }
+
+    companion object {
+        private class DownloadImageTask(val bmImage: ImageView?) : AsyncTask<String, Void, Bitmap>() {
+
+            override fun doInBackground(vararg urls: String): Bitmap? {
+                val urldisplay = urls[0]
+                var mIcon11: Bitmap? = null
+                try {
+                    val `in` = java.net.URL(urldisplay).openStream()
+                    mIcon11 = BitmapFactory.decodeStream(`in`)
+                } catch (e: Exception) {
+                    Log.e("Error", e.message)
+                    e.printStackTrace()
+                }
+
+                return mIcon11
+            }
+
+            override fun onPostExecute(result: Bitmap) {
+                bmImage?.setImageBitmap(result)
+            }
+        }
     }
 
 

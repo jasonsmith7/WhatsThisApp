@@ -22,8 +22,8 @@
                 android:background="@drawable/border"
                 android:id="@+id/imageView3"/>
         <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/photo_width"
+                android:layout_height="@dimen/photo_height"
                 app:srcCompat="@drawable/placeholder"
                 android:id="@+id/postImage"
                 android:layout_marginTop="5dp"

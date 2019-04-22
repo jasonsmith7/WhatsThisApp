@@ -10,7 +10,10 @@ class MockClient : ClientInterface {
     private val browseItem2 = BrowseItem(8989, "https://www.wonderplugin.com/videos/demo-image0.jpg", "This bird is beautiful!!! What is it and why is it swimming???", 1, 0)
     private val browseItem3 = BrowseItem(8990, "https://amp.businessinsider.com/images/5bacdeec254699e6078b4568-750-445.jpg", "This is a cool rock I found on the field trip. It glows!!", 8, 0)
     private val browseItem4 = BrowseItem(8991, "https://i.pinimg.com/originals/5e/24/9c/5e249ce44709a5675ed9b98998ea8ec7.jpg", "I saw this yesterday in Yosemite Nation Park. What kind of bug is this??", 13, 0)
-
+    private val browseItem5 = BrowseItem(8995, "https://creativebeacon.com/wp-content/uploads/2012/11/creature-cool-stuff-for-designers.jpg","I saw this at the toy store! Is is a Furby??", 5, 0)
+    private val browseItem6 = BrowseItem(8995, "https://wallpaper21.com/wp-content/uploads/2017/08/Finding-cool-stuff-from-other-places-in-the-world-wallpaper-wpt7404542.jpg","I don't even know how to explain this one!", 9, 0)
+    private val browseItem7 = BrowseItem(8995, "https://i.ytimg.com/vi/oty1RJRdxx0/hqdefault.jpg","What is this?", 25, 0)
+    private val browseItem8 = BrowseItem(8995, "https://1.bp.blogspot.com/_eeYhBGkKfS0/S0o2M4Mh5wI/AAAAAAAAGqA/S6hwP50gJak/s400/metalwork+2010+030.jpg","What is this and why do we use it?", 12, 0)
     //posters
     private val poster1 = Poster("poster 1", 4567)
     private val poster2 = Poster("poster 2", 4938)
@@ -23,7 +26,10 @@ class MockClient : ClientInterface {
     private val reply2 = Replies(7895, poster1,"reply", set) //not sure exactly what we want to use here
     private val reply3 = Replies(7892, poster2,"reply", set) //not sure exactly what we want to use here
     private val reply4 = Replies(7893, poster2,"reply", set) //not sure exactly what we want to use here
-
+    private val reply5 = Replies(7893, poster2,"reply", set)
+    private val reply6 = Replies(7893, poster2,"reply", set)
+    private val reply7 = Replies(7893, poster2,"reply", set)
+    private val reply8 = Replies(7893, poster2,"reply", set)
     //answers, individual and list of them
     private val answer1 =  Answer("answer 1", poster1, 1234, 10, false, reply1)
     private val answer2 =  Answer("answer 2", poster2, 2222, 13, false, reply2)
@@ -38,7 +44,11 @@ class MockClient : ClientInterface {
     private val ask2  = Ask(browseItem2, listAnswers2)
     private val ask3  = Ask(browseItem3, listAnswers1)
     private val ask4  = Ask(browseItem4, listAnswers2)
-    private val allAsk: Array<Ask> = arrayOf(ask1, ask2, ask3, ask4)
+    private val ask5  = Ask(browseItem5, listAnswers2)
+    private val ask6  = Ask(browseItem6, listAnswers2)
+    private val ask7  = Ask(browseItem7, listAnswers2)
+    private val ask8  = Ask(browseItem8, listAnswers2)
+    private val allAsk: Array<Ask> = arrayOf(ask1, ask2, ask3, ask4, ask5, ask6, ask7, ask8)
 
     //user
     private val user1 = User("name", 4567, false, 22, 10)

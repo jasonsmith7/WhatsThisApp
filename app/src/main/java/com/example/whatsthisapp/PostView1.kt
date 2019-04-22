@@ -11,6 +11,7 @@ import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_post_view1.*
 import android.view.ScaleGestureDetector
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_answer_view1.postImage
 import kotlinx.android.synthetic.main.activity_post_view1.*
 import java.io.ByteArrayOutputStream
@@ -81,7 +82,9 @@ class PostView1 : AppCompatActivity() {
 //        imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageData1,0,imageData1.size))
 
         imageView.setImageBitmap(imageData)
-//        imageView.rotation = 90.toFloat()
+        imageView.rotation = 90.toFloat()
+
+        Toast.makeText(applicationContext,"Your Post has been submitted!!!!!", Toast.LENGTH_LONG).show()
 
         val descr: TextView = findViewById(R.id.postDescription)
         descr.text = post1?.description.toString()
@@ -98,7 +101,7 @@ class PostView1 : AppCompatActivity() {
         val bitmapHeight = bmOptions.outHeight
 
 //        val scaleFactor = Math.min(bitmapWidth/imageViewWidth, bitmapHeight/imageViewHeight)
-        val scaleFactor = 4
+        val scaleFactor = 3
         bmOptions.inJustDecodeBounds = false
         bmOptions.inSampleSize = scaleFactor
 

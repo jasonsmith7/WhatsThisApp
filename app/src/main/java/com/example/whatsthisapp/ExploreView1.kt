@@ -47,22 +47,38 @@ class ExploreView1 : AppCompatActivity() {
         var des2: TextView = findViewById(R.id.textView2)
         var des3: TextView = findViewById(R.id.textView3)
         var des4: TextView = findViewById(R.id.textView4)
+        var des5: TextView = findViewById(R.id.textView5)
+        var des6: TextView = findViewById(R.id.textView6)
+        var des7: TextView = findViewById(R.id.textView7)
+        var des8: TextView = findViewById(R.id.textView8)
 
         //convert url string to bitmap
         DownloadImageTask( findViewById(R.id.postImage1)).execute(posts[0].bI?.imgLink)
         DownloadImageTask( findViewById(R.id.postImage2)).execute(posts[1].bI?.imgLink)
         DownloadImageTask( findViewById(R.id.postImage3)).execute(posts[2].bI?.imgLink)
         DownloadImageTask( findViewById(R.id.postImage4)).execute(posts[3].bI?.imgLink)
+        DownloadImageTask( findViewById(R.id.postImage5)).execute(posts[4].bI?.imgLink)
+        DownloadImageTask( findViewById(R.id.postImage6)).execute(posts[5].bI?.imgLink)
+        DownloadImageTask( findViewById(R.id.postImage7)).execute(posts[6].bI?.imgLink)
+        DownloadImageTask( findViewById(R.id.postImage8)).execute(posts[7].bI?.imgLink)
         des1.text = posts[0].bI?.description
         des2.text = posts[1].bI?.description
         des3.text = posts[2].bI?.description
         des4.text = posts[3].bI?.description
+        des5.text = posts[4].bI?.description
+        des6.text = posts[5].bI?.description
+        des7.text = posts[6].bI?.description
+        des8.text = posts[7].bI?.description
 
         //init image buttons
         var butt1: ImageButton = findViewById(R.id.postImage1)
         var butt2: ImageButton = findViewById(R.id.postImage2)
         var butt3: ImageButton = findViewById(R.id.postImage3)
         var butt4: ImageButton = findViewById(R.id.postImage4)
+        var butt5: ImageButton = findViewById(R.id.postImage5)
+        var butt6: ImageButton = findViewById(R.id.postImage6)
+        var butt7: ImageButton = findViewById(R.id.postImage7)
+        var butt8: ImageButton = findViewById(R.id.postImage8)
 
         //clicklisteners for buttons
         butt1.setOnClickListener{
@@ -101,6 +117,42 @@ class ExploreView1 : AppCompatActivity() {
             this.startActivity(intent)
             finish()
         }
+        butt5.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[4].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[4].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        butt6.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[5].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[5].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        butt7.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[6].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[6].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        butt8.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[7].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[7].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
 
 
 
@@ -108,7 +160,7 @@ class ExploreView1 : AppCompatActivity() {
 
     }
 
-    private inner class DownloadImageTask(internal var bmImage: ImageButton) : AsyncTask<String, Void, Bitmap>() {
+    private inner class DownloadImageTask(internal var bmImage: ImageButton?) : AsyncTask<String, Void, Bitmap>() {
 
         override fun doInBackground(vararg urls: String): Bitmap? {
             val urldisplay = urls[0]
@@ -123,7 +175,7 @@ class ExploreView1 : AppCompatActivity() {
             return mIcon11
         }
         override fun onPostExecute(result: Bitmap) {
-            bmImage.setImageBitmap(result)
+            bmImage?.setImageBitmap(result)
         }
     }
 
