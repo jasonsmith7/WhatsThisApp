@@ -54,22 +54,17 @@
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" android:layout_weight="100">
+                    android:layout_height="match_parent" android:layout_weight=".3">
                 <LinearLayout
-                        android:orientation="horizontal"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_marginTop="10dp"
-                        android:layout_height="wrap_content" android:layout_weight="2">
-                    <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="wrap_content" app:srcCompat="@drawable/thumbs"
-                            android:id="@+id/thumbs"
-                            android:layout_weight="4"
-                            android:padding="0dp"
-                            android:scaleType="fitCenter"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_height="150dp">
                     <TextView
                             android:text="0"
-                            android:layout_width="40dp"
+                            android:layout_width="61dp"
                             android:layout_height="match_parent"
                             android:id="@+id/thumbCount"
                             android:layout_weight="4"
@@ -80,53 +75,32 @@
                             android:padding="0dp"
                             android:gravity="center"
                             android:scaleType="fitCenter"/>
-                </LinearLayout>
-                <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:layout_height="wrap_content" android:layout_weight="2">
                     <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="wrap_content" app:srcCompat="@drawable/answers"
-                            android:id="@+id/answers"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content" app:srcCompat="@drawable/thumbs"
+                            android:id="@+id/thumbs"
                             android:layout_weight="4"
-                            android:padding="0dp"
-                            android:scaleType="fitCenter"/>
-                    <TextView
-                            android:text="0"
-                            android:layout_width="30dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/answerCount"
-                            android:layout_weight="4"
-                            android:textColor="#fff"
-                            app:fontFamily="@font/allerta"
-                            android:textSize="30sp"
-                            android:typeface="sans"
-                            android:gravity="center"
                             android:padding="0dp"
                             android:scaleType="fitCenter"/>
                 </LinearLayout>
-                <TextView
-                        android:text="Logna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:id="@+id/postDescription"
-                        android:layout_marginTop="10dp"
-                        android:gravity="left"
-                        android:textColor="#fff"
-                        app:fontFamily="@font/allerta"
-                        android:isScrollContainer="true"
-                        android:textSize="18sp"
-                        android:typeface="sans"
-                        android:background="@drawable/border"
-                        app:layout_constraintTop_toBottomOf="@+id/postImage"
-                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp" android:textStyle="bold" android:fontFamily="@font/allerta"/>
             </LinearLayout>
         </LinearLayout>
+        <TextView
+                android:text="Logna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi utt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/postDescription"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textColor="#fff"
+                app:fontFamily="@font/allerta"
+                android:isScrollContainer="true"
+                android:textSize="18sp"
+                android:typeface="sans"
+                android:background="@drawable/border"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp" android:textStyle="bold" android:fontFamily="@font/allerta"/>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

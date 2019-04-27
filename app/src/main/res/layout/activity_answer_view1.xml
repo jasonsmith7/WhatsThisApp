@@ -133,7 +133,7 @@
                         android:background="@drawable/my_button2"
                         android:textSize="20sp"
                         android:typeface="sans"
-                        android:id="@+id/answersTitle"
+                        android:id="@+id/answerButton"
                         android:layout_marginBottom="10dp"/>
                 <TextView
                         android:text="No Answers Yet"
