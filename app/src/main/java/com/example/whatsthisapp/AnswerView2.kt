@@ -49,8 +49,10 @@ class AnswerView2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer_view1)
+
+        navigation.selectedItemId = R.id.navigation_answer
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation.isSelected
+
 //        title = "Answer Questions!"
 
         val client = MockClient()
@@ -63,7 +65,7 @@ class AnswerView2 : AppCompatActivity() {
         }
         //var des1: TextView = findViewById(R.id.postDescription)
         //DownloadImageTask( findViewById(R.id.postImage)).execute(posts[0].bI?.imgLink)
-        val i = (0 until 9).random()
+        val i = (0 until 8).random()
         val post_img: String? = posts[i].bI?.imgLink as String
         val post_des: String? = posts[i].bI?.description as String
         var post_th: Int = posts[i].bI?.thumbs as Int
