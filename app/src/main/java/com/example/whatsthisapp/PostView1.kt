@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_post_view1.*
 import android.view.ScaleGestureDetector
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_answer_view1.postImage
@@ -66,6 +67,13 @@ class PostView1 : AppCompatActivity() {
         imageFilePath= post1.img.toString()
         imageView = findViewById<ImageView>(R.id.postImage)
         var imageData= setScaledBitmap()
+
+        //config back button
+        var back: ImageButton = findViewById(R.id.backButton)
+        back.setOnClickListener{
+            onBackPressed()
+        }
+
 //        val stream = ByteArrayOutputStream()
 //        imageData.run {
 //            compress(Bitmap.CompressFormat.PNG, 90, stream)

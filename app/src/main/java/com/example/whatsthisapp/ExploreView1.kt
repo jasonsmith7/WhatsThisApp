@@ -9,6 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 
@@ -43,15 +44,19 @@ class ExploreView1 : AppCompatActivity() {
         navigation.isSelected
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()
-        var des1: TextView = findViewById(R.id.textView)
-        var des2: TextView = findViewById(R.id.textView2)
-        var des3: TextView = findViewById(R.id.textView3)
-        var des4: TextView = findViewById(R.id.textView4)
-        var des5: TextView = findViewById(R.id.textView5)
-        var des6: TextView = findViewById(R.id.textView6)
-        var des7: TextView = findViewById(R.id.textView7)
-        var des8: TextView = findViewById(R.id.textView8)
+        var des1: Button = findViewById(R.id.textView)
+        var des2: Button = findViewById(R.id.textView2)
+        var des3: Button = findViewById(R.id.textView3)
+        var des4: Button = findViewById(R.id.textView4)
+        var des5: Button = findViewById(R.id.textView5)
+        var des6: Button = findViewById(R.id.textView6)
+        var des7: Button = findViewById(R.id.textView7)
+        var des8: Button = findViewById(R.id.textView8)
 
+        var back: ImageButton = findViewById(R.id.backButton)
+        back.setOnClickListener{
+            onBackPressed()
+        }
         //convert url string to bitmap
         DownloadImageTask( findViewById(R.id.postImage1)).execute(posts[0].bI?.imgLink)
         DownloadImageTask( findViewById(R.id.postImage2)).execute(posts[1].bI?.imgLink)
@@ -90,7 +95,25 @@ class ExploreView1 : AppCompatActivity() {
             this.startActivity(intent)
             finish()
         }
+        des1.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[0].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[0].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
         butt2.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[1].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[1].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        des2.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[1].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[1].bI?.description)
@@ -108,7 +131,25 @@ class ExploreView1 : AppCompatActivity() {
             this.startActivity(intent)
             finish()
         }
+        des3.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[2].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[2].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
         butt4.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[3].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[3].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        des4.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[3].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[3].bI?.description)
@@ -126,7 +167,25 @@ class ExploreView1 : AppCompatActivity() {
             this.startActivity(intent)
             finish()
         }
+        des5.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[4].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[4].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
         butt6.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[5].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[5].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        des6.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[5].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[5].bI?.description)
@@ -144,7 +203,25 @@ class ExploreView1 : AppCompatActivity() {
             this.startActivity(intent)
             finish()
         }
+        des7.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[6].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[6].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
         butt8.setOnClickListener{
+            val intent = Intent(this, AnswerView1::class.java)
+            intent.putExtra("Post_Img", posts[7].bI?.imgLink)
+            intent.putExtra("Post_Desc", posts[7].bI?.description)
+            intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
+            intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
+            this.startActivity(intent)
+            finish()
+        }
+        des8.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[7].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[7].bI?.description)
@@ -159,6 +236,19 @@ class ExploreView1 : AppCompatActivity() {
 
 
     }
+
+//    private inner class clickListen(var butt: Button,var index: Int){
+//
+//        butt.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[index].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[index].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[index].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[index].bI?.bulbs)
+//            this.startActivity(intent)
+//            finish()
+//        }
+//    }
 
     private inner class DownloadImageTask(internal var bmImage: ImageButton?) : AsyncTask<String, Void, Bitmap>() {
 

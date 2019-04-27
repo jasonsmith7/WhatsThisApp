@@ -20,13 +20,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-        <ImageView
+        <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="1dp"
-                app:srcCompat="@drawable/home_answer2"
                 android:background="@drawable/border"
-                android:id="@+id/imageView2"/>
+                android:layout_height="70dp">
+            <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/backbutt"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/backButton"
+                    android:padding="10dp"
+                    android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:padding="10dp"
+
+                    app:srcCompat="@drawable/home_answer2"
+                    android:layout_weight="2"
+                    android:id="@+id/imageView2"/>
+        </LinearLayout>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"

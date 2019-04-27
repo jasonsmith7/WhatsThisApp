@@ -23,12 +23,29 @@
             android:layout_marginRight="8dp"
             app:layout_constraintBottom_toTopOf="@+id/navigation"
             app:layout_constraintTop_toTopOf="parent">
-        <ImageView
+        <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:padding="1dp"
+                android:background="@drawable/border"
+                android:layout_height="70dp">
+            <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/backbutt"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/backButton"
+                    android:padding="10dp"
+                    android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:padding="10dp"
 
-                android:layout_height="70dp" app:srcCompat="@drawable/home_explore1"
-                android:id="@+id/imageView"/>
+                    app:srcCompat="@drawable/home_explore2"
+                    android:layout_weight="2"
+                    android:id="@+id/imageView2"/>
+        </LinearLayout>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -49,14 +66,14 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage5"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
                             android:layout_width="80dp"
                             android:textStyle="bold"
-
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
@@ -77,14 +94,14 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage6"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
                             android:layout_width="80dp"
                             android:textStyle="bold"
-
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
@@ -105,14 +122,14 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage7"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
                             android:layout_width="80dp"
                             android:textStyle="bold"
-
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
@@ -133,14 +150,14 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage8"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
                             android:layout_width="80dp"
                             android:textStyle="bold"
-
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
@@ -160,19 +177,19 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage1"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
-                            android:textStyle="bold"
                             android:layout_width="80dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center_vertical"
+                            android:textStyle="bold"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
-                            android:layout_height="wrap_content" android:id="@+id/textView"
-                            android:fontFamily="@font/allerta"/>
+                            android:id="@+id/textView" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -186,18 +203,19 @@
                             android:layout_weight="0.9"
                             android:padding="10dp"
                             android:scaleType="fitCenter" android:id="@+id/postImage2"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
-                            android:textStyle="bold"
                             android:layout_width="80dp"
+                            android:textStyle="bold"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
-                            android:layout_height="wrap_content" android:id="@+id/textView2"
-                            android:fontFamily="@font/allerta"/>
+                            android:id="@+id/textView2" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -213,17 +231,18 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage3"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
                             android:layout_width="80dp"
                             android:textStyle="bold"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"
                             android:scaleType="fitCenter"
-                            android:layout_height="wrap_content"
                             android:id="@+id/textView3" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
@@ -240,14 +259,14 @@
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage4"/>
-                    <TextView
+                    <Button
                             android:text="TextView"
                             android:layout_width="80dp"
                             android:textStyle="bold"
-
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
                             android:padding="10dp"
                             android:gravity="left"
                             android:textSize="16dp"

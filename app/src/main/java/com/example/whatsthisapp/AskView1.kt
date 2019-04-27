@@ -94,9 +94,14 @@ val CAMERA_REQUEST_CODE = 0
 
         val cameraButton: Button = findViewById(R.id.camera_button)
 //        val cameraButton: Button = findViewById(R.id.fab_capture)
-        val im: ImageView = findViewById(R.id.imageView4)
+        //val im: ImageView = findViewById(R.id.imageView4)
         var desc: EditText = findViewById(R.id.editText)
         desc.visibility = View.INVISIBLE
+        //config back button
+        var back: ImageButton = findViewById(R.id.backButton)
+        back.setOnClickListener{
+            onBackPressed()
+        }
         //im.visibility = View.INVISIBLE
 
         cameraButton.setOnClickListener {

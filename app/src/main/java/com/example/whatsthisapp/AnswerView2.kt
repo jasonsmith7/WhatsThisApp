@@ -55,12 +55,19 @@ class AnswerView2 : AppCompatActivity() {
 
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()
+
+        //config back button
+        var back: ImageButton = findViewById(R.id.backButton)
+        back.setOnClickListener{
+            onBackPressed()
+        }
         //var des1: TextView = findViewById(R.id.postDescription)
         //DownloadImageTask( findViewById(R.id.postImage)).execute(posts[0].bI?.imgLink)
-        val post_img: String? = posts[0].bI?.imgLink as String
-        val post_des: String? = posts[0].bI?.description as String
-        var post_th: Int = posts[0].bI?.thumbs as Int
-        var post_bu: Int = posts[0].bI?.bulbs as Int
+        val i = (0 until 9).random()
+        val post_img: String? = posts[i].bI?.imgLink as String
+        val post_des: String? = posts[i].bI?.description as String
+        var post_th: Int = posts[i].bI?.thumbs as Int
+        var post_bu: Int = posts[i].bI?.bulbs as Int
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
         DownloadImageTask(findViewById(R.id.postImage)).execute(post_img)

@@ -46,13 +46,19 @@ class AnswerView1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer_view1)
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.isSelected
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
         title = "Answer Questions!"
         val post_img: String? = intent.extras.get("Post_Img") as String
         val post_des: String? = intent.extras.get("Post_Desc") as String
         var post_th: Int = intent.extras.get("Post_Thumbs") as Int
         var post_bu: Int = intent.extras.get("Post_Bulbs") as Int
+        //program back button
+        var back: ImageButton = findViewById(R.id.backButton)
+        back.setOnClickListener{
+            onBackPressed()
+        }
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
         DownloadImageTask( findViewById(R.id.postImage)).execute(post_img)
