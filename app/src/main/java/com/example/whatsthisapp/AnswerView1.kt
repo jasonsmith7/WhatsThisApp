@@ -47,8 +47,8 @@ class AnswerView1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer_view1)
-        navigation.isSelected
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.selectedItemId = R.id.navigation_answer
 
         title = "Answer Questions!"
         val post_img: String? = intent.extras.get("Post_Img") as String

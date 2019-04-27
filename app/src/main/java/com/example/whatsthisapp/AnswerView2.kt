@@ -50,8 +50,10 @@ class AnswerView2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer_view1)
+
+        navigation.selectedItemId = R.id.navigation_answer
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation.isSelected
+
 //        title = "Answer Questions!"
 
         val client = MockClient()
