@@ -3,6 +3,7 @@ package com.example.whatsthisapp
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -80,9 +81,13 @@ class AnswerView1 : AppCompatActivity() {
             if((count%2 == 0)) {
                 thumb.text = (++post_th).toString()
                 count++
+               // dunnoButt.background.
+                dunnoButt.setImageResource(R.drawable.thumbsclicked)
             }else{
                 thumb.text = (--post_th).toString()
                 count--
+               // dunnoButt.background = R.drawable.my_button2 as Drawable
+                dunnoButt.setImageResource(R.drawable.thumbs)
             }
         }
         answerButt.setOnClickListener{

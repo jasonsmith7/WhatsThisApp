@@ -122,14 +122,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        android:text="Answers"
+                <Button
+                        android:text="Answer!"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:textColor="#fff"
                         app:fontFamily="@font/allerta"
+                        android:background="@drawable/my_button2"
                         android:textSize="20sp"
                         android:typeface="sans"
                         android:id="@+id/answersTitle"

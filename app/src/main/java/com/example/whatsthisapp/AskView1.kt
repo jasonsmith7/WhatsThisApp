@@ -237,10 +237,10 @@ val CAMERA_REQUEST_CODE = 0
 
                     val cameraButton = findViewById<Button>(R.id.camera_button)
                     cameraButton.visibility = View.GONE
-                    val acceptButton = findViewById<ImageButton>(R.id.acceptButton)
-                    val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
-                    acceptButton.visibility = View.VISIBLE
-                    cancelButton.visibility = View.VISIBLE
+                    val acceptButton = findViewById<ImageButton>(R.id.nextButton)
+//                    val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
+//                    acceptButton.visibility = View.VISIBLE
+//                    cancelButton.visibility = View.VISIBLE
 
 
                     //get description
@@ -266,20 +266,20 @@ val CAMERA_REQUEST_CODE = 0
                         //finish()
 
                     }
-                    cancelButton.setOnClickListener {
-                        //val uri = "@drawable/ic_launcher_background.xml"
-                        //val imageResource = resources.getIdentifier(uri, null, packageName)
-                        //var res = getResources().getDrawable(imageResource,@drawable/i);
-                        imageView.setImageResource(R.drawable.placeholder)
-//                      imageView.rotation = -180.toFloat()
-                        imageView.rotation = 0.toFloat()
-                        desc.text.clear()
-
-                        acceptButton.visibility = View.INVISIBLE
-                        cancelButton.visibility = View.INVISIBLE
-                        desc.visibility = View.INVISIBLE
-                        cameraButton.visibility = View.VISIBLE
-                    }
+//                    cancelButton.setOnClickListener {
+//                        //val uri = "@drawable/ic_launcher_background.xml"
+//                        //val imageResource = resources.getIdentifier(uri, null, packageName)
+//                        //var res = getResources().getDrawable(imageResource,@drawable/i);
+//                        imageView.setImageResource(R.drawable.placeholder)
+////                      imageView.rotation = -180.toFloat()
+//                        imageView.rotation = 0.toFloat()
+//                        desc.text.clear()
+//
+//                        acceptButton.visibility = View.INVISIBLE
+//                        cancelButton.visibility = View.INVISIBLE
+//                        desc.visibility = View.INVISIBLE
+//                        cameraButton.visibility = View.VISIBLE
+//                    }
 
                 }
             }

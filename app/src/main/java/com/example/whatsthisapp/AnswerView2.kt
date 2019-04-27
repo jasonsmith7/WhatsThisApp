@@ -3,6 +3,7 @@ package com.example.whatsthisapp
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -33,8 +34,8 @@ class AnswerView2 : AppCompatActivity() {
 //                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
-                val intent = Intent(this, AnswerView2::class.java)
-                this.startActivity(intent)
+//                val intent = Intent(this, AnswerView2::class.java)
+//                this.startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
@@ -63,7 +64,7 @@ class AnswerView2 : AppCompatActivity() {
         }
         //var des1: TextView = findViewById(R.id.postDescription)
         //DownloadImageTask( findViewById(R.id.postImage)).execute(posts[0].bI?.imgLink)
-        val i = (0 until 9).random()
+        val i = (0 until 8).random()
         val post_img: String? = posts[i].bI?.imgLink as String
         val post_des: String? = posts[i].bI?.description as String
         var post_th: Int = posts[i].bI?.thumbs as Int
@@ -91,9 +92,13 @@ class AnswerView2 : AppCompatActivity() {
             if((count%2 == 0)) {
                 thumb.text = (++post_th).toString()
                 count++
+                //dunnoButt.background = R.drawable.border as Drawable
+                dunnoButt.setImageResource(R.drawable.thumbsclicked)
             }else{
                 thumb.text = (--post_th).toString()
                 count--
+                //dunnoButt.background = R.drawable.my_button2 as Drawable
+                dunnoButt.setImageResource(R.drawable.thumbs)
             }
         }
         answerButt.setOnClickListener{
