@@ -49,9 +49,11 @@
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
                           android:orientation="vertical">
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/mybutton3"
@@ -79,6 +81,7 @@
                             android:id="@+id/textView5" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/mybutton3"
@@ -106,6 +109,7 @@
                             android:id="@+id/textView6" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/mybutton3"
@@ -133,6 +137,7 @@
                             android:id="@+id/textView7" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/mybutton3"
@@ -160,6 +165,7 @@
                             android:id="@+id/textView8" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:background="@drawable/mybutton3"
                         android:layout_width="match_parent"
@@ -186,6 +192,7 @@
                             android:id="@+id/textView" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/mybutton3"
@@ -211,6 +218,7 @@
                             android:id="@+id/textView2" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/border"
@@ -239,6 +247,7 @@
                             android:id="@+id/textView3" android:fontFamily="@font/allerta"/>
                 </LinearLayout>
                 <LinearLayout
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:background="@drawable/border"
