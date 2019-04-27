@@ -221,13 +221,12 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:background="@drawable/border"
+                        android:background="@drawable/mybutton3"
                         android:layout_height="match_parent">
                     <ImageButton
                             android:layout_width="50dp"
                             android:layout_height="150dp"
                             app:srcCompat="@drawable/placeholder"
-                            android:background="@drawable/border"
                             android:layout_weight="0.9"
                             android:padding="10dp"
                             android:scaleType="fitCenter"
@@ -248,15 +247,15 @@
                 </LinearLayout>
                 <LinearLayout
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:background="@drawable/border"
+                        android:background="@drawable/mybutton3"
                         android:layout_height="match_parent">
                     <ImageButton
                             android:layout_width="50dp"
                             android:layout_height="150dp"
                             app:srcCompat="@drawable/placeholder"
-                            android:background="@drawable/border"
                             android:layout_weight="0.9"
                             android:padding="10dp"
                             android:scaleType="fitCenter"
