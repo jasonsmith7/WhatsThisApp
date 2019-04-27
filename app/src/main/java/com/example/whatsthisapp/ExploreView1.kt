@@ -41,8 +41,8 @@ class ExploreView1 : AppCompatActivity() {
         setContentView(R.layout.activity_explore_view1)
 //        title = "Click an image for post details"
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.selectedItemId = R.id.navigation_explore
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()

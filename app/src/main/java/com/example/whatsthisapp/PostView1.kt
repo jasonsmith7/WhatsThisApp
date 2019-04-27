@@ -56,8 +56,8 @@ class PostView1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post_view1)
         //title = "Your Post"
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.selectedItemId = R.id.navigation_ask
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
             val intent: Intent = getIntent()
         //val post1: Post? = intent.extras.get("newAsk") as? Post
