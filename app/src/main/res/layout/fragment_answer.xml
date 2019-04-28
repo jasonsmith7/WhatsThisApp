@@ -40,7 +40,7 @@
             <TextView
                     android:text="234"
                     android:layout_width="40dp"
-                    android:layout_height="match_parent" android:id="@+id/thumbCount" android:layout_weight="4"
+                    android:layout_height="match_parent" android:id="@+id/thumbCount5" android:layout_weight="4"
                     android:padding="0dp"
                     android:gravity="center"
                     android:scaleType="fitCenter"/>

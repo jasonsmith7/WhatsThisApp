@@ -17,10 +17,6 @@ import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.widget.*
 import kotlinx.android.synthetic.main.answerdialog.view.*
-import android.support.v4.view.ViewCompat.setScaleY
-import android.support.v4.view.ViewCompat.setScaleX
-import android.text.method.Touch.onTouchEvent
-import android.view.MotionEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
 import android.animation.AnimatorSet as AnimatorSet1
@@ -33,7 +29,6 @@ class AnswerView1 : AppCompatActivity() {
     lateinit var mImageView: ImageView
     private var currentAnimator: Animator? = null
     private var shortAnimationDuration: Int = 0
-    private var count: Int = 0
 
    // lateinit var toolbar: ActionBar
 
@@ -97,14 +92,14 @@ class AnswerView1 : AppCompatActivity() {
 
         //grab view components
         val descr: TextView = findViewById(R.id.postDescription)
-        val thumb: TextView = findViewById(R.id.thumbCount)
+        val thumb: TextView = findViewById(R.id.thumbCount5)
 //        val bulbs: TextView = findViewById(R.id.answerCount)
         //update components with info
         descr.text = post_des
         thumb.text = post_th.toString()
 //        bulbs.text = post_bu.toString()
 
-        val dunnoButt = findViewById<ImageButton>(R.id.dunnoButton)
+        val dunnoButt = findViewById<ImageButton>(R.id.dunnoButton5)
         val answerButt = findViewById<Button>(R.id.answerButton)
         var answerText: String = ""
         var ans: TextView = findViewById(R.id.answerView)

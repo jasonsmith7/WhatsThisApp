@@ -57,44 +57,27 @@
                 android:layout_height="55dp">
             <ImageButton
                     android:layout_width="40dp"
-                    android:layout_height="wrap_content" android:id="@+id/dunnoButton"
+                    android:layout_height="wrap_content" android:id="@+id/dunnoButton5"
                     android:layout_weight="4"
-                    android:padding="5dp"
                     android:layout_marginLeft="10dp"
+                    android:padding="5dp"
                     android:scaleType="fitCenter" android:src="@drawable/thumbs"
                     android:background="@drawable/my_button"/>
             <TextView
                     android:text="234"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" android:id="@+id/thumbCount" android:layout_weight="4"
+                    android:layout_height="match_parent" android:id="@+id/thumbCount5" android:layout_weight="4"
                     android:padding="0dp"
                     android:gravity="center"
-                    android:textColor="#fff"
-                    app:fontFamily="@font/allerta"
-                    android:textSize="30sp"
-                    android:typeface="sans"
-                    android:scaleType="fitCenter" android:lineSpacingExtra="12sp"/>
-            <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/answers"
-                    android:id="@+id/answerButton"
-                    android:layout_weight="4"
-                    android:padding="5dp"
-                    android:scaleType="centerInside" android:background="@drawable/my_button"/>
-            <TextView
-                    android:text="80"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent" android:id="@+id/answerCount" android:layout_weight="4"
-                    android:gravity="center"
-                    android:padding="0dp"
                     android:textColor="#fff"
                     app:fontFamily="@font/allerta"
                     android:textSize="30sp"
                     android:typeface="sans"
                     android:scaleType="fitCenter"
-                    android:lineSpacingExtra="12sp"/>
+            />
         </LinearLayout>
         <LinearLayout
+                android:id="@+id/DescLayout"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -103,37 +86,37 @@
             <TextView
                     android:text="uis nostrud exercitation ullamco laboris nisi utt"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/postDescription"
                     android:layout_gravity="center_vertical"
                     android:padding="15dp"
                     android:gravity="center"
-                    android:textColor="#fff"
                     app:fontFamily="@font/allerta"
+                    android:typeface="sans"
                     android:textSize="18sp"
-                    android:typeface="sans"/>
+                    android:textColor="#fff"/>
         </LinearLayout>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_marginTop="5dp">
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <TextView
-                        android:text="Answers"
+                <Button
+                        android:text="Answer!"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="46dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:textColor="#fff"
                         app:fontFamily="@font/allerta"
+                        android:background="@drawable/my_button2"
                         android:textSize="20sp"
                         android:typeface="sans"
-                        android:id="@+id/answersTitle"
-                        android:layout_marginBottom="10dp"/>
+                        android:id="@+id/answerButton"
+                        android:layout_marginBottom="10dp" android:layout_weight=".1"/>
                 <TextView
                         android:text="No Answers Yet"
                         android:layout_width="match_parent"
@@ -145,15 +128,19 @@
                         android:typeface="sans"
                         android:paddingLeft="20dp"
                         android:id="@+id/answerView"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginBottom="10dp" android:layout_weight="1"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+    <ImageView
+            android:id="@+id/expanded_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+    />
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
             android:layout_height="60dp"
             android:background="@color/colorAccent"
             app:itemTextColor="@drawable/bottom_nav"
