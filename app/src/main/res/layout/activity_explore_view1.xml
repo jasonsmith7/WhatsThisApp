@@ -59,26 +59,58 @@
                         android:background="@drawable/mybutton3"
                         android:layout_height="match_parent">
                     <ImageButton
-                            android:layout_width="50dp"
-                            android:layout_height="150dp"
+                            android:layout_width="161dp"
+                            android:layout_height="wrap_content"
                             app:srcCompat="@drawable/placeholder"
-                            android:layout_weight="0.9"
+                            android:layout_weight="2"
                             android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:id="@+id/postImage5"/>
-                    <Button
-                            android:text="TextView"
-                            android:layout_width="80dp"
-                            android:textStyle="bold"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:layout_gravity="center_vertical"
-                            android:background="@android:color/transparent"
-                            android:padding="10dp"
-                            android:gravity="left"
-                            android:textSize="16dp"
-                            android:scaleType="fitCenter"
-                            android:id="@+id/textView5" android:fontFamily="@font/allerta"/>
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="170dp"
+                            android:layout_height="match_parent" android:layout_weight="2">
+                        <Button
+                                android:text="TextView"
+                                android:layout_width="match_parent"
+                                android:textStyle="bold"
+                                android:layout_height="151dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center_vertical"
+                                android:background="@android:color/transparent"
+                                android:padding="10dp"
+                                android:gravity="left"
+                                android:textSize="16dp"
+                                android:scaleType="fitCenter"
+                                android:id="@+id/textView5" android:fontFamily="@font/allerta"/>
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:layout_weight="8">
+                            <ImageButton
+                                    android:layout_width="27dp"
+                                    android:layout_height="match_parent" android:id="@+id/dunnoButton"
+                                    android:layout_marginLeft="10dp"
+                                    android:padding="5dp"
+                                    android:scaleType="fitCenter" android:src="@drawable/thumbs"
+                                    android:background="@drawable/my_button" android:layout_weight="2"/>
+                            <TextView
+                                    android:text="234"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/thumbCount"
+                                    android:layout_weight="2"
+                                    android:padding="0dp"
+                                    android:gravity="center"
+                                    android:textColor="#fff"
+                                    app:fontFamily="@font/allerta"
+                                    android:textSize="15sp"
+                                    android:typeface="sans"
+                                    android:scaleType="fitCenter"
+                            />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                         android:layout_marginTop="10dp"

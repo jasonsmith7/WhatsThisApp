@@ -52,29 +52,36 @@ class AnswerView1 : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         title = "Answer Questions!"
+
         val post_img: String? = intent.extras.get("Post_Img") as String
         val post_des: String? = intent.extras.get("Post_Desc") as String
         var post_th: Int = intent.extras.get("Post_Thumbs") as Int
         var post_bu: Int = intent.extras.get("Post_Bulbs") as Int
+
+
         //program back button
         var back: ImageButton = findViewById(R.id.backButton)
         back.setOnClickListener{
-            onBackPressed()
+//            onBackPressed()
+//            finish()
+            this.onBackPressed()
+//            finishActivity(44)
         }
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
         DownloadImageTask( findViewById(R.id.postImage)).execute(post_img)
+
         //grab view components
         val descr: TextView = findViewById(R.id.postDescription)
         val thumb: TextView = findViewById(R.id.thumbCount)
-        val bulbs: TextView = findViewById(R.id.answerCount)
+//        val bulbs: TextView = findViewById(R.id.answerCount)
         //update components with info
         descr.text = post_des
         thumb.text = post_th.toString()
-        bulbs.text = post_bu.toString()
+//        bulbs.text = post_bu.toString()
 
         val dunnoButt = findViewById<ImageButton>(R.id.dunnoButton)
-        val answerButt = findViewById<ImageButton>(R.id.answerButton)
+        val answerButt = findViewById<Button>(R.id.answerButton)
         var answerText: String = ""
         var ans: TextView = findViewById(R.id.answerView)
         var count: Int = 0
@@ -84,11 +91,13 @@ class AnswerView1 : AppCompatActivity() {
                 count++
                // dunnoButt.background.
                 dunnoButt.setImageResource(R.drawable.thumbsclicked)
+                dunnoButt.setBackgroundResource(R.drawable.bordertrans)
             }else{
                 thumb.text = (--post_th).toString()
                 count--
                // dunnoButt.background = R.drawable.my_button2 as Drawable
                 dunnoButt.setImageResource(R.drawable.thumbs)
+                dunnoButt.setBackgroundResource(R.drawable.my_button2)
             }
         }
         answerButt.setOnClickListener{
@@ -117,7 +126,7 @@ class AnswerView1 : AppCompatActivity() {
                 ans.text = answerText
                 var numbulb = post_bu + 1
                 post_bu++;
-                bulbs.text = (numbulb).toString()
+//                bulbs.text = (numbulb).toString()
 //                if((count%2 != 0)) {
 //                    thumb.text = (--post_th).toString()
 //                    --count

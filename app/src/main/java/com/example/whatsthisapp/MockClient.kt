@@ -34,18 +34,18 @@ class MockClient : ClientInterface {
     //bi1
     private val answer1HT =  Answer("I don't think that's a dog...", poster1, 1234, 10, false, reply1)
     private val answer2HT =  Answer("That's a horned lizard!", poster2, 1234, 10, false, reply1)
-    private val answerListHT = Answers([answer1HT, answer2HT])
+    private val answerListHT: Array<Answer> = arrayOf(answer1HT, answer2HT)
 
     //bi2
     private val answer1Swan =  Answer("it's a bird", poster2, 2222, 13, false, reply2)
     private val answer2Swan =  Answer("it's a plane", poster2, 2221, 13, false, reply2)
     private val answer3Swan =  Answer("it's a swan", poster2, 2223, 13, false, reply2)
-    private val answerListSwan = Answers([answer1Swan, answer2Swan, answer3Swan])
+    private val answerListSwan: Array<Answer> = arrayOf(answer1Swan, answer2Swan, answer3Swan)
 
     //bi3
     private val answerRock1 =  Answer("It's some type of gem", poster1, 1235, 5, false, reply3)
     private val answerRock2 =  Answer("you sure it's real?", poster1, 1234, 5, false, reply3)
-    private val answerListRock = Answers([answerRock1, answerRock2])
+    private val answerListRock: Array<Answer> = arrayOf(answerRock1, answerRock2)
 
     //bi4
     private val answerBug1 =  Answer("a flat one", poster2, 2221, 6, false, reply4)
@@ -53,26 +53,26 @@ class MockClient : ClientInterface {
     private val answerBug3 =  Answer("a red one", poster2, 2222, 6, false, reply4)
     private val answerBug4 =  Answer("a pink one", poster2, 2223, 6, false, reply4)
     private val answerBug5 =  Answer("a redish pink, cool, flat bug", poster2, 2224, 6, false, reply4)
-    private val answerListBug = Answers([answerBug1, answerBug2, answerBug3, answerBug4, answerBug5])
+    private val answerListBug : Array<Answer> = arrayOf(answerBug1, answerBug2, answerBug3, answerBug4, answerBug5)
 
     //bi5
     private val answerMonsterThing =  Answer("A toy monster", poster2, 2225, 6, false, reply4)
-    private val answerListMonsterThing = Answers([answerMonsterThing])
+    private val answerListMonsterThing: Array<Answer> = arrayOf(answerMonsterThing)
 
     //bi6
     private val answerPicacat1 =  Answer("Picacat", poster2, 2227, 6, false, reply4)
     private val answerPicacat2 =  Answer("photoshop", poster2, 2228, 6, false, reply4)
-    private val answerListPicacat = Aswers([answerPicacat1, answerPicacat2])
+    private val answerListPicacat: Array<Answer> = arrayOf(answerPicacat1, answerPicacat2)
 
     //bi7
     private val answerIDK1 =  Answer("magnetic balls?", poster2, 2229, 6, false, reply4)
     private val answerIDK2 =  Answer("something meant to be in the shape of a snake", poster2, 2220, 6, false, reply4)
-    private val answerListIDK = Answers(answerIDK1, answerIDK2)
+    private val answerListIDK:Array<Answer> = arrayOf(answerIDK1, answerIDK2)
 
     //bi8
     private val answerMetal1 =  Answer("A part of a chair", poster2, 2516, 6, false, reply4)
     private val answerMetal2 =  Answer("Metal", poster2, 2616, 6, false, reply4)
-    private val answerListMetal = Answers(answerMetal1, answerMetal2)
+    private val answerListMetal:Array<Answer> = arrayOf(answerMetal1, answerMetal2)
 
     //asks, individual and list
     private val ask1  = Ask(browseItem1, answerListHT)
@@ -117,7 +117,7 @@ class MockClient : ClientInterface {
     }
 
     override fun httpGetAllUserAnswers(userId: Int): Array<Answer>{
-        return listAnswers2
+        return answerListSwan
     }
 
     override fun httpGetUserData(id: Int): User{

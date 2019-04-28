@@ -12,4 +12,5 @@ import android.view.ViewGroup
  //              var answers: Array<Answer>?  = null)
 
 data class Ask(var bI: BrowseItem?  = null,
-               var answers: Answers  = null)
+//               var answers: Answers  = null)
+               var answers: Array<Answer>?  = null)

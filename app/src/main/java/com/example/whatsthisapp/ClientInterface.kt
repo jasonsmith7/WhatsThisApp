@@ -15,7 +15,7 @@ interface ClientInterface {
 
     fun httpGetAllUserAsks(): Array<Ask>
 
-    fun httpGetAllUserAnswers(userId: Int): Answers
+    fun httpGetAllUserAnswers(userId: Int): Array<Answer>
 
     fun httpGetUserData(id: Int): User
 

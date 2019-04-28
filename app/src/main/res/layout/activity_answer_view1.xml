@@ -76,24 +76,6 @@
                     android:typeface="sans"
                     android:scaleType="fitCenter"
                     />
-            <ImageButton
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/answers"
-                    android:id="@+id/answerButton"
-                    android:layout_weight="4"
-                    android:padding="5dp"
-                    android:scaleType="centerInside" android:background="@drawable/my_button"/>
-            <TextView
-                    android:text="80"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent" android:id="@+id/answerCount" android:layout_weight="4"
-                    android:gravity="center"
-                    android:textColor="#fff"
-                    app:fontFamily="@font/allerta"
-                    android:textSize="30sp"
-                    android:typeface="sans"
-                    android:padding="0dp"
-                    android:scaleType="fitCenter"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -125,7 +107,7 @@
                 <Button
                         android:text="Answer!"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="46dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:textColor="#fff"
@@ -134,7 +116,7 @@
                         android:textSize="20sp"
                         android:typeface="sans"
                         android:id="@+id/answerButton"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginBottom="10dp" android:layout_weight=".1"/>
                 <TextView
                         android:text="No Answers Yet"
                         android:layout_width="match_parent"
@@ -146,7 +128,7 @@
                         android:typeface="sans"
                         android:paddingLeft="20dp"
                         android:id="@+id/answerView"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginBottom="10dp" android:layout_weight="1"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
