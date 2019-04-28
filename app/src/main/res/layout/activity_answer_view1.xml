@@ -46,7 +46,7 @@
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                app:srcCompat="@drawable/placeholder"
+                app:srcCompat="@drawable/placeholder1"
                 android:id="@+id/postImage"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"

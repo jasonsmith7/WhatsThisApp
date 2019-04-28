@@ -75,7 +75,7 @@ class AnswerView2 : AppCompatActivity() {
         val post_img: String? = posts[i].bI?.imgLink as String
         val post_des: String? = posts[i].bI?.description as String
         var post_th: Int = posts[i].bI?.thumbs as Int
-        var post_bu: Int = posts[i].bI?.bulbs as Int
+//        var post_bu: Int = posts[i].bI?.bulbs as Int
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
         DownloadImageTask(findViewById(R.id.postImage)).execute(post_img)
@@ -85,14 +85,14 @@ class AnswerView2 : AppCompatActivity() {
         //des1.text = posts[0].bI?.description
         val descr: TextView = findViewById(R.id.postDescription)
         val thumb: TextView = findViewById(R.id.thumbCount5)
-        val bulbs: TextView = findViewById(R.id.answerCount)
+//        val bulbs: TextView = findViewById(R.id.answerCount)
         //update components with info
         descr.text = post_des
         thumb.text = post_th.toString()
-        bulbs.text = post_bu.toString()
+//        bulbs.text = post_bu.toString()
 
         val dunnoButt = findViewById<ImageButton>(R.id.dunnoButton5)
-        val answerButt = findViewById<ImageButton>(R.id.answerButton)
+        val answerButt = findViewById<Button>(R.id.answerButton)
         var answerText: String = ""
         var ans: TextView = findViewById(R.id.answerView)
         var count: Int = 0
@@ -101,13 +101,13 @@ class AnswerView2 : AppCompatActivity() {
             if((count%2 == 0)) {
                 thumb.text = (++post_th).toString()
                 count++
-                //dunnoButt.background = R.drawable.border as Drawable
                 dunnoButt.setImageResource(R.drawable.thumbsclicked)
+                dunnoButt.setBackgroundResource(R.drawable.bordertrans)
             }else{
                 thumb.text = (--post_th).toString()
                 count--
-                //dunnoButt.background = R.drawable.my_button2 as Drawable
                 dunnoButt.setImageResource(R.drawable.thumbs)
+                dunnoButt.setBackgroundResource(R.drawable.my_button2)
             }
         }
         answerButt.setOnClickListener{
@@ -134,7 +134,7 @@ class AnswerView2 : AppCompatActivity() {
                 Toast.makeText(applicationContext,"Your answer has been submitted for review!",Toast.LENGTH_SHORT).show()
                 answerText=textbox.text.toString()
                 ans.text = answerText
-                bulbs.text = (++post_bu).toString()
+//                bulbs.text = (++post_bu).toString()
                 if((count%2 != 0)) {
                     thumb.text = (--post_th).toString()
                     --count

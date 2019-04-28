@@ -81,6 +81,8 @@ class AnswerView1 : AppCompatActivity() {
 //            onBackPressed()
 //            finish()
             this.onBackPressed()
+//            val intent = Intent(this, ExploreView1::class.java)
+//            this.startActivity(intent)
 //            finishActivity(44)
         }
         //val imageView = findViewById<ImageView>(R.id.postImage)

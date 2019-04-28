@@ -55,6 +55,17 @@ class ExploreView1 : AppCompatActivity() {
         var des7: Button = findViewById(R.id.textView7)
         var des8: Button = findViewById(R.id.textView8)
 
+        var th1: TextView = findViewById(R.id.thumbCount1)
+        var th2: TextView = findViewById(R.id.thumbCount2)
+        var th3: TextView = findViewById(R.id.thumbCount3)
+        var th4: TextView = findViewById(R.id.thumbCount4)
+        var th5: TextView = findViewById(R.id.thumbCount5)
+        var th6: TextView = findViewById(R.id.thumbCount6)
+        var th7: TextView = findViewById(R.id.thumbCount7)
+        var th8: TextView = findViewById(R.id.thumbCount8)
+
+
+
         var back: ImageButton = findViewById(R.id.backButton)
         back.setOnClickListener{
             onBackPressed()
@@ -76,6 +87,14 @@ class ExploreView1 : AppCompatActivity() {
         des6.text = posts[5].bI?.description
         des7.text = posts[6].bI?.description
         des8.text = posts[7].bI?.description
+        th1.text = posts[0].bI?.thumbs.toString()
+        th2.text = posts[1].bI?.thumbs.toString()
+        th3.text = posts[2].bI?.thumbs.toString()
+        th4.text = posts[3].bI?.thumbs.toString()
+        th5.text = posts[4].bI?.thumbs.toString()
+        th6.text = posts[5].bI?.thumbs.toString()
+        th7.text = posts[6].bI?.thumbs.toString()
+        th8.text = posts[7].bI?.thumbs.toString()
 
         //init image buttons
         var butt1: ImageButton = findViewById(R.id.postImage1)
@@ -94,8 +113,7 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[0].bI?.description)
             intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-//            finish()
+            this.startActivity(intent)//            finish()
         }
         des1.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -103,7 +121,7 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[0].bI?.description)
             intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
-            this.startActivityForResult(intent,44)
+            this.startActivity(intent)
 //            finish()
         }
         butt2.setOnClickListener{
@@ -112,8 +130,7 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[1].bI?.description)
             intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-//            finish()
+            this.startActivity(intent)//            finish()
         }
         des2.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -121,8 +138,7 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[1].bI?.description)
             intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-//            finish()
+            this.startActivity(intent)//            finish()
         }
         butt3.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -130,8 +146,7 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[2].bI?.description)
             intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)           // finish()
         }
         des3.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -139,8 +154,7 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[2].bI?.description)
             intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)            //finish()
         }
         butt4.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -148,8 +162,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[3].bI?.description)
             intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         des4.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -157,8 +171,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[3].bI?.description)
             intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         butt5.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -166,8 +180,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[4].bI?.description)
             intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         des5.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -175,8 +189,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[4].bI?.description)
             intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         butt6.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -184,8 +198,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[5].bI?.description)
             intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         des6.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -193,8 +207,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[5].bI?.description)
             intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         butt7.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -202,8 +216,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[6].bI?.description)
             intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         des7.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -211,8 +225,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[6].bI?.description)
             intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         butt8.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -220,8 +234,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[7].bI?.description)
             intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
         des8.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -229,8 +243,8 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[7].bI?.description)
             intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
-            this.startActivityForResult(intent,44)
-            finish()
+            this.startActivity(intent)
+//            finish()
         }
 
 
