@@ -8,5 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+//data class Ask(var bI: BrowseItem?  = null,
+ //              var answers: Array<Answer>?  = null)
+
 data class Ask(var bI: BrowseItem?  = null,
-               var answers: Array<Answer>?  = null)
+               var answers: Answers  = null)
