@@ -8,10 +8,12 @@ import kotlinx.android.synthetic.main.activity_explore_view1.*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
+import android.support.constraint.ConstraintLayout
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import com.example.whatsthisapp.Application.Companion.colortheme
 
 
 class ExploreView1 : AppCompatActivity() {
@@ -43,6 +45,13 @@ class ExploreView1 : AppCompatActivity() {
 
         navigation.selectedItemId = R.id.navigation_explore
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        //set color theme
+//        var mApp = Application()
+//        var bg = mApp.colortheme
+        val bgcolor: ConstraintLayout = findViewById(R.id.container)
+        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
+        if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
 
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()

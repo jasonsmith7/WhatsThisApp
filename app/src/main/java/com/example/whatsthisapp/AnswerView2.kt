@@ -8,6 +8,7 @@ import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.os.AsyncTask
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -20,6 +21,7 @@ import kotlinx.android.synthetic.main.answerdialog.view.*
 import android.view.View
 import android.view.animation.DecelerateInterpolator
 import android.animation.AnimatorSet as AnimatorSet1
+import com.example.whatsthisapp.Application.Companion.colortheme
 
 
 class AnswerView2 : AppCompatActivity() {
@@ -55,9 +57,14 @@ class AnswerView2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer_view1)
-
         navigation.selectedItemId = R.id.navigation_answer
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        //set color theme
+//        var mApp = Application()
+//        var bg = mApp.colortheme
+        val bgcolor: ConstraintLayout = findViewById(R.id.container)
+        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
+        if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
 
 //        title = "Answer Questions!"
 

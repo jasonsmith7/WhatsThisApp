@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Environment
+import android.support.constraint.ConstraintLayout
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
@@ -21,6 +22,7 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlinx.android.synthetic.main.activity_answer_view1.navigation as navigation1
+import com.example.whatsthisapp.Application.Companion.colortheme
 
 
 class PostView1 : AppCompatActivity() {
@@ -58,8 +60,14 @@ class PostView1 : AppCompatActivity() {
         //title = "Your Post"
         navigation.selectedItemId = R.id.navigation_ask
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        //set color theme
+//        var mApp = Application()
+//        var bg = mApp.colortheme
+        val bgcolor: ConstraintLayout = findViewById(R.id.container)
+        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
+        if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
 
-            val intent: Intent = getIntent()
+        val intent: Intent = getIntent()
         //val post1: Post? = intent.extras.get("newAsk") as? Post
         val post1 = intent.extras.get("post") as Post
 //        val descript = intent.extras.get("desc") as String

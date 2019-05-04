@@ -29,6 +29,7 @@ import android.content.Context
 import android.graphics.Camera
 import android.net.Uri
 import android.os.Environment
+import android.support.constraint.ConstraintLayout
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.content.FileProvider
 import android.support.v7.app.ActionBar
@@ -45,6 +46,7 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+import com.example.whatsthisapp.Application.Companion.colortheme
 
 
 class AskView1 : AppCompatActivity() {
@@ -87,6 +89,14 @@ val CAMERA_REQUEST_CODE = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ask_view1)
+
+        //set color theme
+//        var mApp = Application()
+//        var bg = mApp.colortheme
+        val bgcolor: ConstraintLayout = findViewById(R.id.container)
+        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
+        if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigation.isSelected
 //        ButterKnife.bind(this)
@@ -233,7 +243,7 @@ val CAMERA_REQUEST_CODE = 0
 
                     val stream = ByteArrayOutputStream()
                     imageData.compress(Bitmap.CompressFormat.PNG, 90, stream)
-                    var imageData1: ByteArray = stream.toByteArray()
+//                    var imageData1: ByteArray = stream.toByteArray()
 
                     val cameraButton = findViewById<Button>(R.id.camera_button)
                     cameraButton.visibility = View.GONE
