@@ -28,6 +28,7 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Camera
 import android.net.Uri
+import android.os.Build
 import android.os.Environment
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.FloatingActionButton
@@ -50,17 +51,18 @@ import com.example.whatsthisapp.Application.Companion.colortheme
 
 
 class AskView1 : AppCompatActivity() {
-//    private var mCurrentPhotoPath: String = ""
-//    private var filePath: Uri? = null
-//    private val TAKE_PHOTO_REQUEST = 101
-//    private var photoFile: File? = null
+
+//    lateinit var passPath: String
     lateinit var imageView: ImageView
 //    private val CAPTURE_IMAGE_REQUEST = 1
 //    @JvmField @BindView(R.id.image_view)
 //    var imgvPhoto: SimpleDraweeView? = null
 //    @JvmField @BindView(R.id.fab_capture)
 //    var fabCapturePhoto: FloatingActionButton? = null
-val CAMERA_REQUEST_CODE = 0
+    val CAMERA_REQUEST_CODE = 100
+    val IMAGE_PICK_CODE = 1000
+    val PERMISSION_CODE = 1001
+//    val PERMISSION_CODE1 = 1002
     lateinit var imageFilePath: String
     //lateinit var toolbar: ActionBar
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -137,6 +139,33 @@ val CAMERA_REQUEST_CODE = 0
             }
         }
 
+        val galButton: Button = findViewById(R.id.gallery_button)
+        galButton.setOnClickListener {
+            //check runtime permission
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                    PackageManager.PERMISSION_DENIED){
+                    //permission denied
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+                    //show popup to request runtime permission
+                    requestPermissions(permissions, PERMISSION_CODE);
+                }
+                else{
+                    //permission already granted
+                    pickImageFromGallery();
+                }
+            }
+            else{
+                //system OS is < Marshmallow
+                pickImageFromGallery();
+            }
+        }
+    }
+    private fun pickImageFromGallery() {
+        //Intent to pick image
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_PICK_CODE)
     }
 
 
@@ -158,51 +187,30 @@ val CAMERA_REQUEST_CODE = 0
 
         for ((index, permission) in permissions.withIndex()) {
             if (permission == Manifest.permission.CAMERA) {
-                if (grantResults[index] == PackageManager.PERMISSION_GRANTED) {
-                    launchCamera()
+                when(requestCode) {
+                    PERMISSION_CODE -> {
+                        if (grantResults.size > 0 && grantResults[0] ==
+                            PackageManager.PERMISSION_GRANTED
+                        ) {
+                            //permission from popup granted
+                            pickImageFromGallery()
+                        } else {
+                            //permission from popup denied
+                            Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    765 -> {
+                        if (grantResults[index] == PackageManager.PERMISSION_GRANTED) {
+                            launchCamera()
+                        }
+                    }
                 }
             }
         }
     }
 
-//    private fun launchCamera() {
-//        val values = ContentValues(1)
-//        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpg")
-//        val fileUri = contentResolver
-//            .insert(
-//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-//                values
-//            )
-//        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//        if (intent.resolveActivity(packageManager) != null) {
-//            mCurrentPhotoPath = fileUri.toString()
-//            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri)
-//            intent.addFlags(
-//                Intent.FLAG_GRANT_READ_URI_PERMISSION
-//                        or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-//            )
-//            startActivityForResult(intent, TAKE_PHOTO_REQUEST)
-//        }
-//    }
-
-    //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        if (resultCode == Activity.RESULT_OK && requestCode == TAKE_PHOTO_REQUEST) {
-//            processCapturedPhoto()
-//        } else {
-//            super.onActivityResult(requestCode, resultCode, data)
-//        }
-//    }
     private fun launchCamera() {
 
-//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-//            takePictureIntent.resolveActivity(packageManager)?.also {
-//                startActivityForResult(takePictureIntent, 9090)
-//                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-//                intent.putExtra(MediaStore.EXTRA_OUTPUT
-//                currentPhotoFilename = MediaUtil.getOutputMediaFileUri()
-//
-//            }
-//        }
         try {
             val imageFile = createImageFile()
             val callCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -217,143 +225,79 @@ val CAMERA_REQUEST_CODE = 0
         }
     }
 
-
-//        fun getRealPathFromURI(uri: Uri): Uri? {
-//            val proj = arrayOf(MediaStore.Images.Media.DATA)
-//            val cursor = getContentResolver().query(uri, proj, null, null, null)
-//
-//            cursor.moveToFirst()
-//            val idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
-//            return Uri.parse(cursor.getString(idx))
-//        }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         imageView = findViewById<ImageView>(R.id.image_view)
-        when(requestCode) {
-            CAMERA_REQUEST_CODE -> {
+        val stream = ByteArrayOutputStream()
 /*                if(resultCode == Activity.RESULT_OK && data != null) {
                 photoImageView.setImageBitmap(data.extras.get("data") as Bitmap)
             }*/
                 if (resultCode == Activity.RESULT_OK) {
-                    var passPath = imageFilePath
-                    var imageData= setScaledBitmap()
-                    imageView.setImageBitmap(imageData)
-                    imageView.rotation = 90.toFloat()
+                    when(requestCode) {
+                        CAMERA_REQUEST_CODE -> {
+                            var passPath = imageFilePath
+                            var imageData = setScaledBitmap()
+                            imageData.compress(Bitmap.CompressFormat.PNG, 90, stream)
+                            imageView.setImageBitmap(imageData)
+                            imageView.rotation = 90.toFloat()
 
-                    val stream = ByteArrayOutputStream()
-                    imageData.compress(Bitmap.CompressFormat.PNG, 90, stream)
-//                    var imageData1: ByteArray = stream.toByteArray()
+                            val cameraButton = findViewById<Button>(R.id.camera_button)
+                            val galButton = findViewById<Button>(R.id.gallery_button)
+                            cameraButton.visibility = View.GONE
+                            galButton.visibility = View.GONE
 
-                    val cameraButton = findViewById<Button>(R.id.camera_button)
-                    cameraButton.visibility = View.GONE
-                    val acceptButton = findViewById<ImageButton>(R.id.nextButton)
-                    acceptButton.setImageResource(R.drawable.nextbutt)
-//                    val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
-//                    acceptButton.visibility = View.VISIBLE
-//                    cancelButton.visibility = View.VISIBLE
-
-
-                    //get description
-                    var desc: EditText = findViewById(R.id.editText)
-                    desc.visibility = View.VISIBLE
-                    var post = Post()
+                            val acceptButton = findViewById<ImageButton>(R.id.nextButton)
+                            acceptButton.setImageResource(R.drawable.nextbutt)
+                            //get description
+                            var desc: EditText = findViewById(R.id.editText)
+                            desc.visibility = View.VISIBLE
+                            var post = Post()
 
 
-                    acceptButton.setOnClickListener {
-                        post.img = passPath
-                        post.description = desc.text.toString()
-                        val intent = Intent(this, PostView1::class.java)
-//                        var bundle = Bundle()
-//                        bundle.putByteArray("image",imageData1)
-//                        var baos = ByteArrayOutputStream()
-//                        imageData.compress(Bitmap.CompressFormat.PNG, 100, baos)
-//                        var b = baos.toByteArray()
-//                        intent.putExtra("post", b)
-                        intent.putExtra("post", post)
-//                        intent.putExtra("image", imageFilePath)
-//                        intent.putExtra("desc", post.description)
-                        this.startActivity(intent)
-                        //finish()
+                            acceptButton.setOnClickListener {
+                                post.img = passPath
+                                post.description = desc.text.toString()
+                                val intent = Intent(this, PostView1::class.java)
+                                intent.putExtra("post", post)
+                                this.startActivity(intent)
+                            }
+                        }
+                        IMAGE_PICK_CODE -> {
+                            imageView.setImageURI(data?.data)
 
+                            val cameraButton = findViewById<Button>(R.id.camera_button)
+                            val galButton = findViewById<Button>(R.id.gallery_button)
+                            cameraButton.visibility = View.GONE
+                            galButton.visibility = View.GONE
+
+                            val acceptButton = findViewById<ImageButton>(R.id.nextButton)
+                            acceptButton.setImageResource(R.drawable.nextbutt)
+                            //get description
+                            var desc: EditText = findViewById(R.id.editText)
+                            desc.visibility = View.VISIBLE
+                            var post = Post()
+
+
+//                            acceptButton.setOnClickListener {
+//                                post.img = data?.data as String
+//                                post.description = desc.text.toString()
+//                                val intent = Intent(this, PostView1::class.java)
+//                                intent.putExtra("post", post)
+//                                this.startActivity(intent)
+//                            }
+                        }
                     }
-//                    cancelButton.setOnClickListener {
-//                        //val uri = "@drawable/ic_launcher_background.xml"
-//                        //val imageResource = resources.getIdentifier(uri, null, packageName)
-//                        //var res = getResources().getDrawable(imageResource,@drawable/i);
-//                        imageView.setImageResource(R.drawable.placeholder)
-////                      imageView.rotation = -180.toFloat()
-//                        imageView.rotation = 0.toFloat()
-//                        desc.text.clear()
-//
-//                        acceptButton.visibility = View.INVISIBLE
-//                        cancelButton.visibility = View.INVISIBLE
-//                        desc.visibility = View.INVISIBLE
-//                        cameraButton.visibility = View.VISIBLE
-//                    }
 
                 }
             }
-            else -> {
-                Toast.makeText(this, "Unrecognized request code", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-//        if (resultCode != Activity.RESULT_CANCELED) {
-//            if (requestCode == 9090) {
-//                //val imageData1: Bitmap = data?.extras?.get("data") as Bitmap
-////                currentPhotoFileName
-//                val thumbnail = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
-//                val stream = ByteArrayOutputStream()
-////                imageData1.compress(Bitmap.CompressFormat.PNG, 90, stream)
-//                thumbnail.compress(Bitmap.CompressFormat.PNG, 90, stream)
-//                var imageData: ByteArray = stream.toByteArray()
-////                val bitmapData = BitmapFactory.decodeFile(currentPhotoFileName.)
-
-////                imageView.setImageBitmap(imageData1)
-//                imageView.setImageBitmap(thumbnail)
-//                imageView.rotation = 90.toFloat()
-//
-//                val cameraButton = findViewById<Button>(R.id.camera_button)
-//                cameraButton.visibility = View.GONE
-//                val acceptButton = findViewById<ImageButton>(R.id.acceptButton)
-//                val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
-//                acceptButton.visibility = View.VISIBLE
-//                cancelButton.visibility = View.VISIBLE
-//
-//
-//                //get description
-//                var desc: EditText = findViewById(R.id.editText)
-//                desc.visibility = View.VISIBLE
-//                var post = Post()
-//
-//
-//                acceptButton.setOnClickListener {
-//                    post.img = imageData
-//                    post.description = desc.text.toString()
-//                    val intent = Intent(this, PostView1::class.java)
-//                    intent.putExtra("newAsk", post as Serializable)
-//                    this.startActivity(intent)
-//                    finish()
-//                }
-//                cancelButton.setOnClickListener {
-//                    //val uri = "@drawable/ic_launcher_background.xml"
-//                    //val imageResource = resources.getIdentifier(uri, null, packageName)
-//                    //var res = getResources().getDrawable(imageResource,@drawable/i);
-//                    imageView.setImageResource(R.drawable.askicon);
-//                    imageView.rotation = -180.toFloat()
-//                    imageView.rotation = 0.toFloat()
-//                    desc.text.clear()
-//
-//                    acceptButton.visibility = View.INVISIBLE
-//                    cancelButton.visibility = View.INVISIBLE
-//                    desc.visibility = View.INVISIBLE
-//                    cameraButton.visibility = View.VISIBLE
-//                }
+            //IMAGE_PICK_CODE ->
+//            else -> {
+//                Toast.makeText(this, "Unrecognized request code", Toast.LENGTH_SHORT).show()
 //            }
 //        }
 
-        }
+
+
     @Throws(IOException::class)
     fun createImageFile(): File {
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
@@ -385,28 +329,5 @@ val CAMERA_REQUEST_CODE = 0
 
 }
 
-//private fun processCapturedPhoto() {
-////    val cursor = contentResolver.query(Uri.parse(mCurrentPhotoPath),
-////        Array(1) {android.provider.MediaStore.Images.ImageColumns.DATA},
-////        null, null, null)
-////    cursor.moveToFirst()
-////    val photoPath = cursor.getString(0)
-////    cursor.close()
-////    val file = File(photoPath)
-////    val uri = Uri.fromFile(file)
-////
-////    val height = resources.getDimensionPixelSize(R.dimen.photo_height)
-////    val width = resources.getDimensionPixelSize(R.dimen.photo_width)
-////
-////    val request = ImageRequestBuilder.newBuilderWithSource(uri)
-////        .setResizeOptions(ResizeOptions(width, height))
-////        .build()
-////    val controller = Fresco.newDraweeControllerBuilder()
-////        .setOldController(imgvPhoto?.controller)
-////        .setImageRequest(request)
-////        .build()
-////    imgvPhoto?.controller = controller
-////}
-//}
 
 

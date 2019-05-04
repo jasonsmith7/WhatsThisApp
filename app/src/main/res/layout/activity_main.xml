@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity"
         android:screenOrientation="portrait"
-        android:background="@drawable/bgv2" android:id="@+id/content">
+        android:background="@drawable/bgv2green" android:id="@+id/content">
     <ImageButton
             android:layout_width="200dp"
             android:layout_height="200dp"
@@ -71,7 +71,7 @@
         >
             <Button
                     android:layout_width="wrap_content"
-                    android:background="@drawable/bblue"
+                    android:background="@drawable/bpink"
                     android:padding="10dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/bTheme"

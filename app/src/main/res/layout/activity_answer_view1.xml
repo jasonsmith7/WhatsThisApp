@@ -7,7 +7,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bblue"
+        android:background="@drawable/bgreen"
         android:screenOrientation="portrait"
 
         tools:context=".AnswerView1">

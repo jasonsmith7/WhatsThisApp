@@ -46,14 +46,14 @@ class MainActivity : AppCompatActivity() {
 
         //set themes
         btheme.setOnClickListener{
-            bgcolor.background = resources.getDrawable(R.drawable.bgv2)
+            bgcolor.background = resources.getDrawable(R.drawable.bgv2pink)
 //           mApp.changeCT(1)
-            colortheme = 1
+            colortheme = 2
         }
         gtheme.setOnClickListener{
             bgcolor.background = resources.getDrawable(R.drawable.bgv2green)
 //            mApp.changeCT(2)
-            colortheme = 2
+            colortheme = 1
         }
         rtheme.setOnClickListener{
             bgcolor.background = resources.getDrawable(R.drawable.bgv2red)

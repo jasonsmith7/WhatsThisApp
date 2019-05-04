@@ -64,7 +64,7 @@ class AnswerView2 : AppCompatActivity() {
 //        var mApp = Application()
 //        var bg = mApp.colortheme
         val bgcolor: ConstraintLayout = findViewById(R.id.container)
-        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
+        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bpink)
         if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
 
         //home button

@@ -10,10 +10,9 @@ import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.support.constraint.ConstraintLayout
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import com.example.whatsthisapp.Application.Companion.colortheme
+import org.w3c.dom.Text
 
 
 class ExploreView1 : AppCompatActivity() {
@@ -50,19 +49,19 @@ class ExploreView1 : AppCompatActivity() {
 //        var mApp = Application()
 //        var bg = mApp.colortheme
         val bgcolor: ConstraintLayout = findViewById(R.id.container)
-        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
+        if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bpink)
         if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
 
         val client = MockClient()
         val posts = client.httpGetAllUserAsks()
-        var des1: Button = findViewById(R.id.textView)
-        var des2: Button = findViewById(R.id.textView2)
-        var des3: Button = findViewById(R.id.textView3)
-        var des4: Button = findViewById(R.id.textView4)
-        var des5: Button = findViewById(R.id.textView5)
-        var des6: Button = findViewById(R.id.textView6)
-        var des7: Button = findViewById(R.id.textView7)
-        var des8: Button = findViewById(R.id.textView8)
+        var des1: TextView = findViewById(R.id.textView)
+        var des2: TextView = findViewById(R.id.textView2)
+        var des3: TextView = findViewById(R.id.textView3)
+        var des4: TextView = findViewById(R.id.textView4)
+        var des5: TextView = findViewById(R.id.textView5)
+        var des6: TextView = findViewById(R.id.textView6)
+        var des7: TextView = findViewById(R.id.textView7)
+        var des8: TextView = findViewById(R.id.textView8)
 
         var th1: TextView = findViewById(R.id.thumbCount1)
         var th2: TextView = findViewById(R.id.thumbCount2)
@@ -114,15 +113,21 @@ class ExploreView1 : AppCompatActivity() {
         th8.text = posts[7].bI?.thumbs.toString()
 
         //init image buttons
-        var butt1: ImageButton = findViewById(R.id.postImage1)
-        var butt2: ImageButton = findViewById(R.id.postImage2)
-        var butt3: ImageButton = findViewById(R.id.postImage3)
-        var butt4: ImageButton = findViewById(R.id.postImage4)
-        var butt5: ImageButton = findViewById(R.id.postImage5)
-        var butt6: ImageButton = findViewById(R.id.postImage6)
-        var butt7: ImageButton = findViewById(R.id.postImage7)
-        var butt8: ImageButton = findViewById(R.id.postImage8)
+        var butt5: LinearLayout = findViewById(R.id.layout1)
+        var butt6: LinearLayout = findViewById(R.id.layout2)
+        var butt7: LinearLayout = findViewById(R.id.layout3)
+        var butt8: LinearLayout = findViewById(R.id.layout4)
+        var butt1: LinearLayout = findViewById(R.id.layout5)
+        var butt2: LinearLayout = findViewById(R.id.layout6)
+        var butt3: LinearLayout = findViewById(R.id.layout7)
+        var butt4: LinearLayout = findViewById(R.id.layout8)
 
+//        var l: LinearLayout = findViewById(R.id.layout1)
+//
+//        l.setOnClickListener{
+//            val intent = Intent(this, AnswerView2::class.java)
+//            this.startActivity(intent)
+//        }
         //clicklisteners for buttons
         butt1.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
@@ -283,7 +288,7 @@ class ExploreView1 : AppCompatActivity() {
 //        }
 //    }
 
-    private inner class DownloadImageTask(internal var bmImage: ImageButton?) : AsyncTask<String, Void, Bitmap>() {
+    private inner class DownloadImageTask(internal var bmImage: ImageView?) : AsyncTask<String, Void, Bitmap>() {
 
         override fun doInBackground(vararg urls: String): Bitmap? {
             val urldisplay = urls[0]
