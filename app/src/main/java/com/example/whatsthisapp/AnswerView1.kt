@@ -19,6 +19,7 @@ import android.util.Log
 import android.widget.*
 import kotlinx.android.synthetic.main.answerdialog.view.*
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
 import android.animation.AnimatorSet as AnimatorSet1
 import com.example.whatsthisapp.Application.Companion.colortheme
@@ -179,6 +180,10 @@ class AnswerView1 : AppCompatActivity() {
 
             // Finally, make the alert dialog using builder
             val dialog: AlertDialog = builder.create()
+
+            // focus keyboard potential hack from:
+            // https://stackoverflow.com/questions/3455235/when-using-alertdialog-builder-with-edittext-the-soft-keyboard-doesnt-pop
+            dialog.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
 
             // Display the alert dialog on app interface
             dialog.show()
