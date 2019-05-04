@@ -61,7 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:id="@+id/textView9" android:fontFamily="@font/allerta"
+                android:textColor="#fff"
+                android:id="@+id/colorText" android:fontFamily="@font/allerta"
                 android:textStyle="bold" android:textSize="18sp"/>
         <LinearLayout
                 android:orientation="horizontal"

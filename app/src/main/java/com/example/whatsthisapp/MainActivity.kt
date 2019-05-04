@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import com.example.whatsthisapp.Application.Companion.colortheme
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val btheme: Button = findViewById(R.id.bTheme)
         val rtheme: Button = findViewById(R.id.rTheme)
         val bgcolor: ConstraintLayout = findViewById(R.id.content)
+        var ctext: TextView = findViewById(R.id.colorText)
 
         askButton.setOnClickListener{
             val intent = Intent(this, AskView1::class.java)

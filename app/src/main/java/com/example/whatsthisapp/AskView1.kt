@@ -248,6 +248,7 @@ val CAMERA_REQUEST_CODE = 0
                     val cameraButton = findViewById<Button>(R.id.camera_button)
                     cameraButton.visibility = View.GONE
                     val acceptButton = findViewById<ImageButton>(R.id.nextButton)
+                    acceptButton.setImageResource(R.drawable.nextbutt)
 //                    val cancelButton = findViewById<ImageButton>(R.id.cancelButton)
 //                    acceptButton.visibility = View.VISIBLE
 //                    cancelButton.visibility = View.VISIBLE
