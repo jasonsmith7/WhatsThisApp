@@ -74,11 +74,19 @@ class ExploreView1 : AppCompatActivity() {
         var th8: TextView = findViewById(R.id.thumbCount8)
 
 
-
+        //back button
         var back: ImageButton = findViewById(R.id.backButton)
         back.setOnClickListener{
             onBackPressed()
         }
+        //home button
+        var home = findViewById<ImageButton>(R.id.homeButton)
+        home.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            this.startActivity(intent)
+        }
+
+
         //convert url string to bitmap
         DownloadImageTask( findViewById(R.id.postImage1)).execute(posts[0].bI?.imgLink)
         DownloadImageTask( findViewById(R.id.postImage2)).execute(posts[1].bI?.imgLink)

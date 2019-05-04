@@ -67,6 +67,13 @@ class AnswerView2 : AppCompatActivity() {
         if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
         if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
 
+        //home button
+        var home = findViewById<ImageButton>(R.id.homeButton)
+        home.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            this.startActivity(intent)
+        }
+
 //        title = "Answer Questions!"
 
         val client = MockClient()

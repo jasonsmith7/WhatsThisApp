@@ -6,14 +6,14 @@ import java.util.*
 class MockClient : ClientInterface {
 
     //browse items and list
-    private val browseItem1 = BrowseItem(8858, "https://interactives.dallasnews.com/2018/the-disappearing-horny-toad/images/_lizards-poster.jpg", "What the heck is this type of dog?", 4, 0)
-    private val browseItem2 = BrowseItem(8989, "https://www.wonderplugin.com/videos/demo-image0.jpg", "This bird is beautiful!!! What is it and why is it swimming???", 1, 0)
-    private val browseItem3 = BrowseItem(8990, "https://amp.businessinsider.com/images/5bacdeec254699e6078b4568-750-445.jpg", "This is a cool rock I found on the field trip. It glows!!", 8, 0)
-    private val browseItem4 = BrowseItem(8991, "https://i.pinimg.com/originals/5e/24/9c/5e249ce44709a5675ed9b98998ea8ec7.jpg", "I saw this yesterday in Yosemite Nation Park. What kind of bug is this??", 13, 0)
-    private val browseItem5 = BrowseItem(8995, "https://creativebeacon.com/wp-content/uploads/2012/11/creature-cool-stuff-for-designers.jpg","I saw this at the toy store! Is is a Furby??", 5, 0)
-    private val browseItem6 = BrowseItem(8995, "https://wallpaper21.com/wp-content/uploads/2017/08/Finding-cool-stuff-from-other-places-in-the-world-wallpaper-wpt7404542.jpg","I don't even know how to explain this one!", 9, 0)
+    private val browseItem1 = BrowseItem(8858, "https://www.squawkfox.com/wp-content/uploads/2010/12/webkinz.jpg", "I want one of these toys! what is this?", 4, 0)
+    private val browseItem2 = BrowseItem(8989, "https://d1ia71hq4oe7pn.cloudfront.net/photo/64829071-480px.jpg", "What kind of bird is this?", 1, 0)
+    private val browseItem3 = BrowseItem(8990, "https://media.gettyimages.com/videos/circuit-board-top-shot-burns-out-video-id143290377?s=640x640", "This is a cool rock I found on the field trip. It glows!!", 8, 0)
+    private val browseItem4 = BrowseItem(8991, "https://pmdvod.nationalgeographic.com/NG_Video_DEV/944/95/beetle-dung-kids_480x360.jpg", "I saw", 13, 0)
+    private val browseItem5 = BrowseItem(8995, "https://www.pets4homes.co.uk/images/classifieds/2019/02/18/2214684/thumbs/3-white-cute-holland-lop-baby-bunnies-5c6aea5f35213.jpg","It's sooo cute! What is it?", 5, 0)
+    private val browseItem6 = BrowseItem(8995, "https://a0.amlimg.com/NGY4N2I5ZWNiYTQwMTEzNGQzM2QzYzI1OThlNDNmMDc7GLKBddJrIluspBRacbbwaHR0cDovL21lZGlhLmFkc2ltZy5jb20vNTJjODUyNDBmM2Q1NjFhNTc5NDZkZGNlMDRlZWVhODQ4MGEyOWVjYjdlZTRiZTZiODBiN2RlODNkOTA5Y2ExOS5qcGd8fHx8fHw0ODB4MzYwfGh0dHA6Ly93d3cuYWR2ZXJ0cy5pZS9zdGF0aWMvaS93YXRlcm1hcmsucG5nfHx8.jpg","What is this? Some type of computer chip?", 9, 0)
     private val browseItem7 = BrowseItem(8995, "https://i.ytimg.com/vi/oty1RJRdxx0/hqdefault.jpg","What is this?", 25, 0)
-    private val browseItem8 = BrowseItem(8995, "https://1.bp.blogspot.com/_eeYhBGkKfS0/S0o2M4Mh5wI/AAAAAAAAGqA/S6hwP50gJak/s400/metalwork+2010+030.jpg","What is this and why do we use it?", 12, 0)
+    private val browseItem8 = BrowseItem(8995, "https://www.cell2get.com/images/7290_01.jpg","What kind of calculator is this?", 12, 0)
     //posters
     private val poster1 = Poster("poster 1", 4567)
     private val poster2 = Poster("poster 2", 4938)

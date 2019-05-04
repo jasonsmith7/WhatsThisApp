@@ -66,6 +66,12 @@ class PostView1 : AppCompatActivity() {
         val bgcolor: ConstraintLayout = findViewById(R.id.container)
         if (colortheme == 2) bgcolor.background = resources.getDrawable(R.drawable.bgreen)
         if (colortheme == 3) bgcolor.background = resources.getDrawable(R.drawable.bred)
+        //home button
+        var home = findViewById<ImageButton>(R.id.homeButton)
+        home.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            this.startActivity(intent)
+        }
 
         val intent: Intent = getIntent()
         //val post1: Post? = intent.extras.get("newAsk") as? Post
