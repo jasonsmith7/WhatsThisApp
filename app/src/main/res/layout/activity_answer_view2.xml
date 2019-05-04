@@ -80,11 +80,11 @@
                 android:id="@+id/DescLayout"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/border">
             <TextView
-                    android:text="uis nostrud exercitation ullamco laboris nisi utt"
+                    android:text="uis nosasdfasd exercitation ullamco laboris nisi utt sdakjfklasdklfjlk; asadfasd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/postDescription"
