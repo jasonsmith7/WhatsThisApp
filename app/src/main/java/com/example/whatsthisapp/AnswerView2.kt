@@ -41,8 +41,8 @@ class AnswerView2 : AppCompatActivity() {
 //                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_answer -> {
-//                val intent = Intent(this, AnswerView2::class.java)
-//                this.startActivity(intent)
+                val intent = Intent(this, AnswerView2::class.java)
+                this.startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_explore -> {
