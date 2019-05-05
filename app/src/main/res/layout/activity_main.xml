@@ -12,7 +12,7 @@
     <ImageButton
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/home_ask1"
+            app:srcCompat="@drawable/home_ask4"
             android:id="@+id/askButton"
             android:background="@drawable/my_button2"
             android:foregroundGravity="center_horizontal"
@@ -26,7 +26,7 @@
     <ImageButton
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/home_answer2"
+            app:srcCompat="@drawable/home_answer4"
             android:id="@+id/answerButton"
             android:background="@drawable/my_button2"
 
@@ -40,7 +40,7 @@
     <ImageButton
             android:layout_width="150dp"
             android:layout_height="150dp"
-            app:srcCompat="@drawable/home_explore2"
+            app:srcCompat="@drawable/home_explore4"
             android:background="@drawable/my_button2"
             android:id="@+id/exploreButton"
             android:layout_weight="3"
