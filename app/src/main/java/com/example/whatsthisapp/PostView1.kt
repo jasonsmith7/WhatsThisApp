@@ -3,6 +3,7 @@ package com.example.whatsthisapp
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.support.constraint.ConstraintLayout
@@ -79,33 +80,24 @@ class PostView1 : AppCompatActivity() {
 //        val descript = intent.extras.get("desc") as String
 //        val bundle = intent.extras as Bundle
 //        var imageData1 = bundle.getByteArray("post") as ByteArray
-        imageFilePath= post1.img.toString()
         imageView = findViewById<ImageView>(R.id.postImage)
-        var imageData= setScaledBitmap()
-
+        if(!post1.img.isNullOrBlank()) {
+            imageFilePath = post1.img.toString()
+            var imageData = setScaledBitmap()
+            imageView.setImageBitmap(imageData)
+            imageView.rotation = 90.toFloat()
+        }
+        else{
+            val img = intent.extras.get("uri") as Uri
+            imageView.setImageURI(img)
+        }
         //config back button
         var back: ImageButton = findViewById(R.id.backButton)
         back.setOnClickListener{
             onBackPressed()
         }
 
-//        val stream = ByteArrayOutputStream()
-//        imageData.run {
-//            compress(Bitmap.CompressFormat.PNG, 90, stream)
-//        }
-//        var imageData1: ByteArray = stream.toByteArray()
 
-        //make post object
-       // val post1 = Post()
-        //post1.img=imageData1
-        //post1.description=descript
-
-//        imageView = findViewById<ImageView>(R.id.postImage)
-//        postImage.setImageBitmap(BitmapFactory.decodeByteArray(imageData1,0,imageData1.size!!))
-//        imageView.setImageBitmap(BitmapFactory.decodeByteArray(imageData1,0,imageData1.size))
-
-        imageView.setImageBitmap(imageData)
-        imageView.rotation = 90.toFloat()
 
         Toast.makeText(applicationContext,"Your Post has been submitted!!!!!", Toast.LENGTH_LONG).show()
 

@@ -278,13 +278,14 @@ class AskView1 : AppCompatActivity() {
                             var post = Post()
 
 
-//                            acceptButton.setOnClickListener {
-//                                post.img = data?.data as String
-//                                post.description = desc.text.toString()
-//                                val intent = Intent(this, PostView1::class.java)
-//                                intent.putExtra("post", post)
-//                                this.startActivity(intent)
-//                            }
+                            acceptButton.setOnClickListener {
+                                post.img = null
+                                post.description = desc.text.toString()
+                                val intent = Intent(this, PostView1::class.java)
+                                intent.putExtra("post", post)
+                                intent.putExtra("uri",data?.data)
+                                this.startActivity(intent)
+                            }
                         }
                     }
 
