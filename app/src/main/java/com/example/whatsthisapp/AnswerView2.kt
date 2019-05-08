@@ -32,6 +32,7 @@ class AnswerView2 : AppCompatActivity() {
     lateinit var mImageView: ImageView
     private var currentAnimator: Animator? = null
     private var shortAnimationDuration: Int = 0
+    lateinit var ansFragment: AnswerFragment
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -90,6 +91,12 @@ class AnswerView2 : AppCompatActivity() {
         val post_img: String? = posts[i].bI?.imgLink as String
         val post_des: String? = posts[i].bI?.description as String
         var post_th: Int = posts[i].bI?.thumbs as Int
+
+        //start fragment and pass i
+        val ansFragment = AnswerFragment.newInstance(i, null)
+        openFragment(ansFragment)
+
+
 //        var post_bu: Int = posts[i].bI?.bulbs as Int
         //val imageView = findViewById<ImageView>(R.id.postImage)
         //postImage.setImageBitmap(BitmapFactory.decodeByteArray(post1?.img,0,post1?.img?.size!!))
@@ -109,7 +116,7 @@ class AnswerView2 : AppCompatActivity() {
         val dunnoButt = findViewById<ImageButton>(R.id.dunnoButton5)
         val answerButt = findViewById<Button>(R.id.answerButton)
         var answerText: String = ""
-        var ans: TextView = findViewById(R.id.answerView)
+//        var ans: TextView = findViewById(R.id.answerView)
         var count: Int = 0
 
         dunnoButt.setOnClickListener{
@@ -148,22 +155,13 @@ class AnswerView2 : AppCompatActivity() {
                 // Do something when user press the positive button
                 Toast.makeText(applicationContext,"Your answer has been submitted for review!",Toast.LENGTH_SHORT).show()
                 answerText=textbox.text.toString()
-                ans.text = answerText
-//                bulbs.text = (++post_bu).toString()
-                if((count%2 != 0)) {
-                    thumb.text = (--post_th).toString()
-                    --count
-                }
-                // Change the app background color
-                //container.setBackgroundColor(Color.RED)
+                answerText = "Your Answer: \n" + answerText
+                answerButt.text = "Edit Your Answer!"
+//                posts[i].answers?.add(Answer(answerText,null,null,null,null,null))
+                val ansFragment = AnswerFragment.newInstance(i, answerText)
+                openFragment(ansFragment)
+
             }
-
-
-            // Display a negative button on alert dialog
-//            builder.setNegativeButton("Cancel"){dialog,which ->
-//                Toast.makeText(applicationContext,"Your answer has been canceled.",Toast.LENGTH_SHORT).show()
-//            }
-
 
             // Display a neutral button on alert dialog
             builder.setNeutralButton("Cancel"){_,_ ->

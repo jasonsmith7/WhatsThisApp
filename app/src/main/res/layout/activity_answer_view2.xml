@@ -128,18 +128,6 @@
                         android:textStyle="bold"
                         android:id="@+id/answerButton"
                         android:layout_marginBottom="10dp" android:layout_weight=".1"/>
-                <TextView
-                        android:text="No Answers Yet"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textColor="#fff"
-                        app:fontFamily="@font/arvo_bold"
-                        android:textSize="12sp"
-                        android:typeface="sans"
-                        android:paddingLeft="20dp"
-                        android:id="@+id/answerView"
-                        android:layout_marginBottom="10dp" android:layout_weight="1"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

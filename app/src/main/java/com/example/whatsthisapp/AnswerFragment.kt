@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,15 +27,16 @@ private const val ARG_PARAM2 = "param2"
  */
 class AnswerFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
+    private var param1: Int = 0
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getInt(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -42,7 +45,32 @@ class AnswerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_answer2, container, false)
+        val view = inflater.inflate(R.layout.fragment_answer, container, false)
+
+        val client = MockClient()
+        val posts = client.httpGetAllUserAsks()
+        var ans = posts[this.param1].answers
+        var ans2 = ArrayList<String>(posts[this.param1].answers!!.size)
+
+
+
+//        var j = 0
+        for (i in ans!!.iterator()) {
+            ans2.add(i.answer.toString())
+        }
+        if (!this.param2.isNullOrEmpty())
+            ans2.add(0, param2!!)
+
+        var ansList = view.findViewById<ListView>(R.id.ansList)
+
+        val ad = ArrayAdapter(context, R.layout.answer_item, ans2)
+
+        ansList.adapter = ad
+
+
+
+
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -50,14 +78,14 @@ class AnswerFragment : Fragment() {
         listener?.onFragmentInteraction(uri)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
-        }
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        if (context is OnFragmentInteractionListener) {
+//            listener = context
+//        } else {
+//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//        }
+//    }
 
     override fun onDetach() {
         super.onDetach()
@@ -91,11 +119,12 @@ class AnswerFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(param1: Int, param2: String?) =
             AnswerFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
+                    putInt(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
+
                 }
             }
     }

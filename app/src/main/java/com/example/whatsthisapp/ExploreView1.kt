@@ -135,139 +135,147 @@ class ExploreView1 : AppCompatActivity() {
             intent.putExtra("Post_Desc", posts[0].bI?.description)
             intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
+            intent.putExtra("index", 0)
             this.startActivity(intent)//            finish()
         }
-        des1.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[0].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[0].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
-            this.startActivity(intent)
-//            finish()
-        }
+//        des1.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[0].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[0].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[0].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[0].bI?.bulbs)
+//            this.startActivity(intent)
+////            finish()
+//        }
         butt2.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[1].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[1].bI?.description)
             intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
+            intent.putExtra("index", 1)
             this.startActivity(intent)//            finish()
         }
-        des2.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[1].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[1].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
-            this.startActivity(intent)//            finish()
-        }
+//        des2.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[1].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[1].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[1].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[1].bI?.bulbs)
+//            this.startActivity(intent)//            finish()
+//        }
         butt3.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[2].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[2].bI?.description)
             intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
+            intent.putExtra("index", 2)
             this.startActivity(intent)           // finish()
         }
-        des3.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[2].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[2].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
-            this.startActivity(intent)            //finish()
-        }
+//        des3.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[2].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[2].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[2].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[2].bI?.bulbs)
+//            this.startActivity(intent)            //finish()
+//        }
         butt4.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[3].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[3].bI?.description)
             intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
+            intent.putExtra("index", 3)
             this.startActivity(intent)
 //            finish()
         }
-        des4.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[3].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[3].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
-            this.startActivity(intent)
-//            finish()
-        }
+//        des4.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[3].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[3].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[3].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[3].bI?.bulbs)
+//            this.startActivity(intent)
+////            finish()
+//        }
         butt5.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[4].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[4].bI?.description)
             intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
+            intent.putExtra("index", 4)
             this.startActivity(intent)
 //            finish()
         }
-        des5.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[4].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[4].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
-            this.startActivity(intent)
-//            finish()
-        }
+//        des5.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[4].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[4].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[4].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[4].bI?.bulbs)
+//            this.startActivity(intent)
+////            finish()
+//        }
         butt6.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[5].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[5].bI?.description)
             intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
+            intent.putExtra("index", 5)
             this.startActivity(intent)
 //            finish()
         }
-        des6.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[5].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[5].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
-            this.startActivity(intent)
-//            finish()
-        }
+//        des6.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[5].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[5].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[5].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[5].bI?.bulbs)
+//            this.startActivity(intent)
+////            finish()
+//        }
         butt7.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[6].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[6].bI?.description)
             intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
+            intent.putExtra("index", 6)
             this.startActivity(intent)
 //            finish()
         }
-        des7.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[6].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[6].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
-            this.startActivity(intent)
-//            finish()
-        }
+//        des7.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[6].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[6].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[6].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[6].bI?.bulbs)
+//            this.startActivity(intent)
+////            finish()
+//        }
         butt8.setOnClickListener{
             val intent = Intent(this, AnswerView1::class.java)
             intent.putExtra("Post_Img", posts[7].bI?.imgLink)
             intent.putExtra("Post_Desc", posts[7].bI?.description)
             intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
             intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
+            intent.putExtra("index", 7)
             this.startActivity(intent)
 //            finish()
         }
-        des8.setOnClickListener{
-            val intent = Intent(this, AnswerView1::class.java)
-            intent.putExtra("Post_Img", posts[7].bI?.imgLink)
-            intent.putExtra("Post_Desc", posts[7].bI?.description)
-            intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
-            intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
-            this.startActivity(intent)
-//            finish()
-        }
+//        des8.setOnClickListener{
+//            val intent = Intent(this, AnswerView1::class.java)
+//            intent.putExtra("Post_Img", posts[7].bI?.imgLink)
+//            intent.putExtra("Post_Desc", posts[7].bI?.description)
+//            intent.putExtra("Post_Thumbs", posts[7].bI?.thumbs)
+//            intent.putExtra("Post_Bulbs", posts[7].bI?.bulbs)
+//            this.startActivity(intent)
+////            finish()
+//        }
 
 
 

@@ -90,6 +90,14 @@ class AnswerView1 : AppCompatActivity() {
         val post_des: String? = intent.extras.get("Post_Desc") as String
         var post_th: Int = intent.extras.get("Post_Thumbs") as Int
         var post_bu: Int = intent.extras.get("Post_Bulbs") as Int
+        var i = intent.extras.get("index") as Int
+
+//        val client = MockClient()
+//        val posts = client.httpGetAllUserAsks()
+
+        //start fragment and pass i
+        val ansFragment = AnswerFragment.newInstance(i, null)
+        openFragment(ansFragment)
 
 
         //program back button
@@ -121,7 +129,7 @@ class AnswerView1 : AppCompatActivity() {
         val dunnoButt = findViewById<ImageButton>(R.id.dunnoButton5)
         val answerButt = findViewById<Button>(R.id.answerButton)
         var answerText: String = ""
-        var ans: TextView = findViewById(R.id.answerView)
+//        var ans: TextView = findViewById(R.id.answerView)
         var count: Int = 0
         dunnoButt.setOnClickListener{
             if((count%2 == 0)) {
@@ -161,14 +169,10 @@ class AnswerView1 : AppCompatActivity() {
                 // Do something when user press the positive button
                 Toast.makeText(applicationContext,"Your answer has been submitted for review!",Toast.LENGTH_SHORT).show()
                 answerText=textbox.text.toString()
-                ans.text = answerText
-                var numbulb = post_bu + 1
-                post_bu++;
-//                bulbs.text = (numbulb).toString()
-//                if((count%2 != 0)) {
-//                    thumb.text = (--post_th).toString()
-//                    --count
-//                }
+                answerText = "Your Answer: \n" + answerText
+
+                val ansFragment = AnswerFragment.newInstance(i, answerText)
+                openFragment(ansFragment)
 
             }
 
