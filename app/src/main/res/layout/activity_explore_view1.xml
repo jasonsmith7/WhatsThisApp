@@ -33,7 +33,7 @@
                 android:layout_height="70dp"
                 android:padding="10dp"
 
-                app:srcCompat="@drawable/home_explore2"
+                app:srcCompat="@drawable/home_explore4"
                 android:layout_weight="2"
                 android:id="@+id/imageView2"/>
         <ImageButton
@@ -110,7 +110,7 @@
                                     android:gravity="center"
                                     android:textStyle="bold"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -128,7 +128,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView5" android:fontFamily="@font/allerta"
+                                android:id="@+id/textView5" android:fontFamily="@font/arvo_bold"
                         />
                         <Space
                                 android:layout_width="match_parent"
@@ -180,7 +180,7 @@
                                     android:gravity="center"
                                     android:textStyle="bold"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -198,7 +198,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView6" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView6" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -249,7 +249,7 @@
                                     android:gravity="center"
                                     android:textStyle="bold"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -266,7 +266,7 @@
                                 android:padding="10dp"
                                 android:gravity="left"
                                 android:textSize="12dp"
-                                android:id="@+id/textView7" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView7" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -317,7 +317,7 @@
                                     android:gravity="center"
                                     android:textStyle="bold"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -335,7 +335,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView8" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView8" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -386,7 +386,7 @@
                                     android:gravity="center"
                                     android:textColor="#000"
                                     android:textStyle="bold"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -404,7 +404,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -455,7 +455,7 @@
                                     android:gravity="center"
                                     android:textStyle="bold"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -473,7 +473,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView2" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView2" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -523,7 +523,7 @@
                                     android:padding="0dp"
                                     android:gravity="center"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
                                     android:textStyle="bold"
@@ -542,7 +542,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView3" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView3" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -593,7 +593,7 @@
                                     android:gravity="center"
                                     android:textStyle="bold"
                                     android:textColor="#000"
-                                    app:fontFamily="@font/allerta"
+                                    app:fontFamily="@font/arvo_bold"
                                     android:textSize="15sp"
                                     android:typeface="sans"
 
@@ -611,7 +611,7 @@
                                 android:gravity="left"
                                 android:textSize="12dp"
 
-                                android:id="@+id/textView4" android:fontFamily="@font/allerta"/>
+                                android:id="@+id/textView4" android:fontFamily="@font/arvo_bold"/>
                         <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" android:layout_weight="2"/>
@@ -623,10 +623,8 @@
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginStart="0dp"
             android:layout_height="60dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/mybutton3"
             app:itemTextColor="@drawable/bottom_nav"
             app:itemIconTint="@drawable/bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"

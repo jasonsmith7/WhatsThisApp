@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:id="@+id/colorText" android:fontFamily="@font/allerta"
+                android:id="@+id/colorText" android:fontFamily="@font/arvo_bold"
                 android:textStyle="bold" android:textSize="18sp"/>
         <LinearLayout
                 android:orientation="horizontal"

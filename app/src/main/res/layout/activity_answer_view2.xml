@@ -38,7 +38,7 @@
                     android:layout_height="70dp"
                     android:padding="10dp"
 
-                    app:srcCompat="@drawable/home_answer2"
+                    app:srcCompat="@drawable/home_answer4"
                     android:layout_weight="2"
                     android:id="@+id/imageView2"/>
             <ImageButton
@@ -70,15 +70,15 @@
                     android:layout_marginLeft="10dp"
                     android:padding="5dp"
                     android:scaleType="fitCenter" android:src="@drawable/thumbs"
-                    android:background="@drawable/my_button"/>
+                    android:background="@drawable/my_button2"/>
             <TextView
                     android:text="234"
                     android:layout_width="20dp"
                     android:layout_height="match_parent" android:id="@+id/thumbCount5" android:layout_weight="4"
                     android:padding="0dp"
                     android:gravity="center"
-                    android:textColor="#fff"
-                    app:fontFamily="@font/allerta"
+                    android:textColor="#000000"
+                    app:fontFamily="@font/arvo_bold"
                     android:textSize="30sp"
                     android:typeface="sans"
                     android:scaleType="fitCenter"
@@ -99,7 +99,7 @@
                     android:layout_gravity="center_vertical"
                     android:padding="15dp"
                     android:gravity="center"
-                    app:fontFamily="@font/allerta"
+                    app:fontFamily="@font/arvo_bold"
                     android:typeface="sans"
                     android:textSize="18sp"
                     android:textColor="#fff"/>
@@ -115,14 +115,17 @@
                 <Button
                         android:text="Answer!"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
+                        android:layout_height="66dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textColor="#fff"
-                        app:fontFamily="@font/allerta"
+                        android:textColor="#000"
+                        app:fontFamily="@font/arvo_bold"
                         android:background="@drawable/my_button2"
-                        android:textSize="20sp"
+                        android:textSize="30sp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:typeface="sans"
+                        android:textStyle="bold"
                         android:id="@+id/answerButton"
                         android:layout_marginBottom="10dp" android:layout_weight=".1"/>
                 <TextView
@@ -131,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textColor="#fff"
-                        app:fontFamily="@font/allerta"
+                        app:fontFamily="@font/arvo_bold"
                         android:textSize="12sp"
                         android:typeface="sans"
                         android:paddingLeft="20dp"
@@ -150,7 +153,7 @@
             android:id="@+id/navigation"
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/mybutton3"
             app:itemTextColor="@drawable/bottom_nav"
             app:itemIconTint="@drawable/bottom_nav"
             app:layout_constraintBottom_toBottomOf="parent"

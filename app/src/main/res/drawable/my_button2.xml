@@ -9,9 +9,9 @@
             android:centerX="0%"
             android:centerY="100%"
             android:type="sweep"
-            android:endColor="#a9bbfc"
-            android:centerColor="#042EBE"
-            android:startColor="#a9bbfc"
+            android:endColor="#ABC3FF"
+
+            android:startColor="#56ACEE"
 
     />
     <padding
@@ -25,7 +25,7 @@
             android:height="100dp"
     />
     <stroke
-            android:width="3dp"
-            android:color="#666666"
+            android:width="1dp"
+            android:color="#444"
     />
 </shape>
